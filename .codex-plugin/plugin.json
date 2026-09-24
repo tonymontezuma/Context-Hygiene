@@ -1,0 +1,22 @@
+{
+  "name": "context-hygiene",
+  "version": "0.1.0",
+  "description": "Auditoria guiada do Claude Code: mínimo contexto, máxima utilidade, com evidências fornecidas pelo usuário.",
+  "author": {
+    "name": "Context Hygiene contributors"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/tonymontezuma/Context-Hygiene",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Context Hygiene",
+    "shortDescription": "Revise o contexto do Claude Code sem perder capacidades úteis.",
+    "longDescription": "Coach de auditoria que analisa outputs e screenshots fornecidos por você, propõe uma mudança reversível por vez e compara antes e depois. Sem acesso direto ao computador.",
+    "developerName": "Context Hygiene contributors",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Audite meu Claude Code com os outputs que eu fornecer."
+    ]
+  }
+}
