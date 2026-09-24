@@ -22,3 +22,10 @@ Ferramentas de QA e capturas foram mantidas fora do repositório; não entram no
 - Botões antes/depois mantêm 389 e 49 pontos ativos nos dois idiomas. Cópia do prompt e fallback de seleção de texto confirmados em português e inglês.
 - axe-core sem violações detectadas nas duas versões, em desktop e mobile, nas mesmas regras indicadas acima.
 - Estilos, scripts, logo e âncoras relativos conferidos em ambas as rotas. Documentação externa ainda em português identificada com `(PT)` na página inglesa.
+
+## Prévia da V2
+
+- Conteúdo PT/EN alinhado à direção documentada no README: companion opcional, somente leitura, escopos explícitos e snapshots comparáveis; marcado como planejamento sem data.
+- Ambas as versões inspecionadas no navegador a 1280 px, com três cartões e sem overflow horizontal. CSS empilha os cartões abaixo de 800 px; esse breakpoint não foi validado visualmente nesta alteração.
+- Novos pares de texto conferidos: secundário/superfície 8,83:1; coral/superfície 7,64:1; texto escuro/coral 8,54:1 (mínimo 4,5:1).
+- Avaliações ainda não ativas. Proposta e perguntas em FEEDBACK.md; depende de criar e conectar um formulário real.
