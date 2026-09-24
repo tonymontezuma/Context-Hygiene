@@ -2,7 +2,7 @@
 
 Versão 0.1.0 · 2026-09-24
 
-Context Hygiene é um pacote de instruções e referências. Não possui serviço próprio, banco de dados, telemetria, login, conectores ou código de coleta. Seu responsável não recebe os conteúdos de auditoria por um canal do plugin.
+O plugin Context Hygiene é um pacote de instruções e referências. Não possui serviço próprio, banco de dados, telemetria, login, conectores ou código de coleta. Seu responsável não recebe os conteúdos de auditoria por um canal do plugin.
 
 ## Dados usados
 
@@ -22,4 +22,6 @@ Snapshots e relatórios permanecem na conversa. Não há persistência própria 
 
 ## Site de apresentação
 
-O site estático no GitHub Pages não inclui analytics, cookies próprios, formulários ou armazenamento local. O JavaScript anima os dados agregados e copia o prompt apenas quando o visitante pede. Não envia o conteúdo da área de transferência. A hospedagem e seus registros técnicos seguem as políticas do GitHub.
+O site de apresentação no GitHub Pages utiliza Google Analytics 4 (ID `G-0B847D49P5`) para medir visitas e uso das páginas em português e inglês. A tag envia dados de navegação ao Google e utiliza cookies para distinguir visitantes e sessões, conforme a [documentação do GA4](https://support.google.com/analytics/answer/11397207) e a [política de privacidade do Google](https://policies.google.com/privacy). Esta medição pertence ao site; o plugin continua sem telemetria própria e não envia conteúdos das auditorias ao Analytics.
+
+O site não inclui formulários. Seu JavaScript anima os dados agregados e copia o prompt apenas quando o visitante pede. Não envia o conteúdo da área de transferência. A hospedagem e seus registros técnicos seguem as políticas do GitHub.
