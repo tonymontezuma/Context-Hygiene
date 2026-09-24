@@ -44,3 +44,12 @@ Ferramentas de QA e capturas foram mantidas fora do repositório; não entram no
 - Navegação a V2 em frames de 320 px (PT) e 390 px (EN): seção começa em aproximadamente 147 px, abaixo do cabeçalho de 127 px; sem overflow horizontal da página.
 - Altura reservada para âncoras atualizada com ResizeObserver; fallback CSS e links nativos preservam a navegação sem JavaScript.
 - Sintaxe JavaScript e verificação de whitespace do Git passaram.
+
+## Cabeçalho em linha e menu mobile
+
+- Desktop em 1280 px: logo, navegação, GitHub e idiomas alinhados em uma linha, nessa ordem.
+- Até 1100 px: botão de três linhas abre as seis seções; até 600 px a marca usa o símbolo para caber junto ao GitHub e aos idiomas.
+- PT 320 px / EN 390 px revisados em frames responsivos, sem overflow horizontal. Abertura com Enter e clique, fechamento com Escape e ao escolher V2 verificados.
+- Estado aria-expanded e rótulos Abrir/Fechar menu ou Open/Close menu acompanham a interação. Escape devolve o foco ao botão.
+- Âncora V2 após fechar o menu em inglês ficou em y=85 px, abaixo do cabeçalho de 65 px.
+- Links continuam disponíveis sem JavaScript por CSS de melhoria progressiva; sintaxe JavaScript e git diff --check passaram.

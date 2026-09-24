@@ -90,31 +90,43 @@
             ><span class="brand-period">.</span></span
           ></a
         >
-        <div class="header-actions">
-          <nav class="language-switch" aria-label="Idioma da página">
-            <a
-              href="./"
-              lang="pt-BR"
-              hreflang="pt-BR"
-              aria-label="Português"
-              aria-current="page"
-              >PT</a
-            >
-            <a href="en/" lang="en" hreflang="en" aria-label="English">EN</a>
-          </nav>
-        </div>
-        <nav class="main-nav" aria-label="Navegação principal">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-controls="section-menu"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+          hidden
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav
+          class="main-nav"
+          id="section-menu"
+          aria-label="Navegação principal"
+        >
           <a href="#resultados">Resultados</a>
           <a href="#processo">O processo</a>
           <a href="#plugin">O plugin</a>
           <a href="#comecar">Começar</a>
           <a href="#duvidas">Dúvidas</a>
           <a href="#v2">V2</a>
+        </nav>
+        <a
+          class="nav-github"
+          href="https://github.com/tonymontezuma/Context-Hygiene"
+          >GitHub <span aria-hidden="true">↗</span></a
+        >
+        <nav class="language-switch" aria-label="Idioma da página">
           <a
-            class="nav-github"
-            href="https://github.com/tonymontezuma/Context-Hygiene"
-            >GitHub <span aria-hidden="true">↗</span></a
+            href="./"
+            lang="pt-BR"
+            hreflang="pt-BR"
+            aria-label="Português"
+            aria-current="page"
+            >PT</a
           >
+          <a href="en/" lang="en" hreflang="en" aria-label="English">EN</a>
         </nav>
       </div>
     </header>

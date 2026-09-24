@@ -17,6 +17,46 @@
   }
 
   const english = root.lang === "en";
+  const menuToggle = document.querySelector(".menu-toggle");
+  const sectionMenu = document.getElementById("section-menu");
+  const mobileMenu = window.matchMedia("(max-width: 1100px)");
+  function setMenuOpen(open) {
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute(
+      "aria-label",
+      english
+        ? open
+          ? "Close menu"
+          : "Open menu"
+        : open
+          ? "Fechar menu"
+          : "Abrir menu",
+    );
+    sectionMenu.classList.toggle("is-open", open);
+  }
+  menuToggle.addEventListener("click", () =>
+    setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true"),
+  );
+  sectionMenu.addEventListener("click", (event) => {
+    if (event.target.closest("a")) setMenuOpen(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.key === "Escape" &&
+      menuToggle.getAttribute("aria-expanded") === "true"
+    ) {
+      setMenuOpen(false);
+      menuToggle.focus();
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (!siteHeader.contains(event.target)) setMenuOpen(false);
+  });
+  mobileMenu.addEventListener("change", () => setMenuOpen(false));
+  menuToggle.hidden = false;
+  root.classList.add("nav-ready");
+  updateHeaderOffset();
+
   const text = english
     ? {
         before: "before the audit",
