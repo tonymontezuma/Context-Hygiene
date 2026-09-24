@@ -19,3 +19,7 @@ Oculte tokens, chaves de API, senhas, endereços privados e dados pessoais desne
 Os conteúdos enviados continuam sujeitos às configurações e políticas do ChatGPT/Codex ou de outro host usado. Ausência de telemetria própria não significa ausência de processamento ou retenção pela plataforma. O plugin não garante execução offline, apagamento de mensagens ou isolamento técnico do host. Seus limites de acesso são instruções de comportamento, não uma sandbox que revoga ferramentas do host.
 
 Snapshots e relatórios permanecem na conversa. Não há persistência própria nem gravação automática no computador. O usuário controla eventual cópia/exportação. O benchmark contém apenas contagens agregadas; os demais casos de avaliação usam dados sintéticos. Logs de testes reais não devem ser incorporados ao repositório sem anonimização e decisão explícita do responsável.
+
+## Site de apresentação
+
+O site estático no GitHub Pages não inclui analytics, cookies próprios, formulários ou armazenamento local. O JavaScript anima os dados agregados e copia o prompt apenas quando o visitante pede. Não envia o conteúdo da área de transferência. A hospedagem e seus registros técnicos seguem as políticas do GitHub.

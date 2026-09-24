@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10120f" />
+    <title>Context Hygiene — Menos ruído. Mais contexto para criar.</title>
+    <meta
+      name="description"
+      content="Um coach de higiene de contexto do Claude Code para ChatGPT/Codex. Conheça o processo e o caso real: 389 → 49 skills nunca usadas, uma redução de 87,4%."
+    />
+    <meta
+      property="og:title"
+      content="Context Hygiene — Menos ruído. Mais contexto para criar."
+    />
+    <meta
+      property="og:description"
+      content="Uma auditoria guiada para manter o que importa no seu Claude Code. Conheça o processo e os resultados do nosso caso real."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta
+      property="og:url"
+      content="https://tonymontezuma.github.io/Context-Hygiene/"
+    />
+    <link
+      rel="canonical"
+      href="https://tonymontezuma.github.io/Context-Hygiene/"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/mark.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="header wrap">
+      <a class="brand" href="#" aria-label="Context Hygiene, início"
+        ><img src="assets/mark.svg" width="38" height="38" alt="" /><span
+          >context<span class="brand-light">hygiene</span
+          ><span class="brand-period">.</span></span
+        ></a
+      >
+      <nav aria-label="Navegação principal">
+        <a href="#resultados">Resultados</a><a href="#processo">O processo</a
+        ><a
+          class="nav-github"
+          href="https://github.com/tonymontezuma/Context-Hygiene"
+          >GitHub <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+    <main id="conteudo">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="tiny-cross" aria-hidden="true">✳</span> MÍNIMO
+            CONTEXTO. MÁXIMA UTILIDADE.
+          </div>
+          <h1 id="hero-title">
+            Menos ruído.<br />Mais contexto<br /><span>para criar.</span>
+          </h1>
+          <p class="hero-description">
+            Seu agente não precisa carregar tudo.<br />Precisa ter acesso ao que
+            importa.
+          </p>
+          <p class="hero-detail">
+            Um coach para revisar skills, plugins e configurações do Claude
+            Code. Com as suas evidências, uma mudança por vez.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-lime" href="#processo"
+              >Conheça o processo <span aria-hidden="true">↗</span></a
+            ><a
+              class="text-link"
+              href="https://github.com/tonymontezuma/Context-Hygiene"
+              >Explorar o plugin <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="hero-meta">
+            <span>V1 · skills-only</span><span>Open source · MIT</span>
+          </div>
+        </div>
+        <div
+          class="context-visual"
+          aria-label="Visualização do caso real de 389 para 49 skills nunca usadas"
+        >
+          <div class="visual-head">
+            <span class="mono">CONTEXT / AUDIT_001</span
+            ><span class="visual-tag">CASO REAL</span>
+          </div>
+          <div class="visual-number">
+            <span id="visual-count">49</span
+            ><span class="visual-number-caption"
+              >skills nunca usadas<br /><span id="visual-state"
+                >depois da auditoria</span
+              ></span
+            >
+          </div>
+          <div id="context-grid" class="context-grid" aria-hidden="true"></div>
+          <noscript
+            ><p class="no-js-visual">
+              389 antes <span aria-hidden="true">→</span> 49 depois<br />340
+              itens a menos no indicador.
+            </p></noscript
+          >
+          <div class="visual-bottom">
+            <span
+              ><i class="legend-dot" aria-hidden="true"></i
+              ><span id="visual-legend">49 de 389 itens</span></span
+            >
+            <div
+              class="segmented"
+              role="group"
+              aria-label="Alternar visualização do caso"
+              hidden
+            >
+              <button type="button" data-view="before" aria-pressed="false">
+                Antes</button
+              ><button type="button" data-view="after" aria-pressed="true">
+                Depois
+              </button>
+            </div>
+          </div>
+          <div class="visual-foot">
+            <span class="mono">MESMO PROCESSO. MENOS EXCESSO.</span
+            ><span aria-hidden="true">↘</span>
+          </div>
+          <p class="visual-caption">
+            Cada ponto representa uma skill no indicador “nunca usadas”.
+            Contagem de skills, não de tokens.
+          </p>
+        </div>
+      </section>
+      <div class="audience wrap">
+        <p>Para quem cria com IA</p>
+        <div>
+          <span>Claude Code</span><span>Codex</span><span>ChatGPT</span
+          ><span>Antigravity</span>
+        </div>
+        <p class="audience-note">
+          A V1 audita Claude Code e foi criada para ChatGPT/Codex.
+        </p>
+      </div>
+
+      <section class="results" id="resultados" aria-labelledby="results-title">
+        <div class="wrap">
+          <div class="section-top">
+            <span class="eyebrow">01 / EVIDÊNCIA ANTES DE OPINIÃO</span
+            ><a
+              href="https://github.com/tonymontezuma/Context-Hygiene/blob/main/skills/audit-claude-code/references/benchmark.md"
+              >Ver dados do caso <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="result-intro">
+            <h2 id="results-title">O que mudou<br />na nossa auditoria.</h2>
+            <p>
+              Revisamos a configuração a partir do trabalho real. O resultado
+              foi uma queda expressiva no número de skills marcadas como nunca
+              usadas.
+            </p>
+          </div>
+          <div class="big-result">
+            <div>
+              <strong>−87,4<span>%</span></strong>
+              <p>no total de skills nunca usadas</p>
+            </div>
+            <div class="result-equation">
+              <div><span>ANTES</span><strong>389</strong></div>
+              <span class="equation-arrow" aria-hidden="true">↗</span>
+              <div><span>DEPOIS</span><strong>49</strong></div>
+            </div>
+          </div>
+          <div class="result-breakdown">
+            <article class="metric">
+              <div class="metric-top">
+                <h3>User skills</h3>
+                <span>−78,5%</span>
+              </div>
+              <p>
+                <span>121</span
+                ><span class="metric-arrow" aria-hidden="true">→</span
+                ><strong>26</strong>
+              </p>
+              <div class="bar-pair" aria-hidden="true">
+                <div class="bar-before"></div>
+                <div class="bar-after" style="--bar: 21.49%"></div>
+              </div>
+              <div class="bar-labels">
+                <span>Antes</span><span>Depois</span>
+              </div>
+            </article>
+            <article class="metric">
+              <div class="metric-top">
+                <h3>Synced skills</h3>
+                <span>−62,5%</span>
+              </div>
+              <p>
+                <span>16</span
+                ><span class="metric-arrow" aria-hidden="true">→</span
+                ><strong>6</strong>
+              </p>
+              <div class="bar-pair" aria-hidden="true">
+                <div class="bar-before"></div>
+                <div class="bar-after" style="--bar: 37.5%"></div>
+              </div>
+              <div class="bar-labels">
+                <span>Antes</span><span>Depois</span>
+              </div>
+            </article>
+            <article class="metric">
+              <div class="metric-top">
+                <h3>Plugin skills</h3>
+                <span>−93,3%</span>
+              </div>
+              <p>
+                <span>252</span
+                ><span class="metric-arrow" aria-hidden="true">→</span
+                ><strong>17</strong>
+              </p>
+              <div class="bar-pair" aria-hidden="true">
+                <div class="bar-before"></div>
+                <div class="bar-after" style="--bar: 6.75%"></div>
+              </div>
+              <div class="bar-labels">
+                <span>Antes</span><span>Depois</span>
+              </div>
+            </article>
+          </div>
+          <div class="result-note">
+            <strong>Um caso real. Não uma meta universal.</strong>
+            <p>
+              Dados agregados e anonimizados da nossa utilização do processo. A
+              redução mede skills nunca usadas; não mede economia de tokens,
+              custo ou velocidade. O resultado de cada auditoria depende da
+              stack e dos fluxos que precisam continuar funcionando.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="method wrap section-space"
+        id="processo"
+        aria-labelledby="method-title"
+      >
+        <div class="section-top">
+          <span class="eyebrow">02 / UM PROCESSO, SEIS ETAPAS</span
+          ><span class="mono small-tag">SEM LIMPEZA EM MASSA</span>
+        </div>
+        <div class="method-heading">
+          <h2 id="method-title">
+            Meça. Entenda.<br /><span class="lime-text"
+              >Mude com critério.</span
+            >
+          </h2>
+          <p>
+            O objetivo é reduzir o excesso e preservar o que faz o seu projeto
+            andar. Até concluir que nada precisa mudar é um bom resultado.
+          </p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-number">01</span>
+            <div>
+              <span class="step-code">baseline</span>
+              <h3>Comece pelo que existe.</h3>
+              <p>
+                Versão, stack, tarefas essenciais e uma fotografia inicial do
+                contexto.
+              </p>
+            </div>
+            <span class="step-symbol" aria-hidden="true">⌁</span>
+          </li>
+          <li>
+            <span class="step-number">02</span>
+            <div>
+              <span class="step-code">inventory</span>
+              <h3>Saiba o que está carregado.</h3>
+              <p>
+                Skills, plugins, MCPs, hooks e memória, com suas origens e
+                escopos.
+              </p>
+            </div>
+            <span class="step-symbol" aria-hidden="true">⊞</span>
+          </li>
+          <li>
+            <span class="step-number">03</span>
+            <div>
+              <span class="step-code">analysis</span>
+              <h3>Separe utilidade de excesso.</h3>
+              <p>
+                Cruze uso real, custo observado e dependências. Pouco uso não é
+                inutilidade.
+              </p>
+            </div>
+            <span class="step-symbol" aria-hidden="true">≋</span>
+          </li>
+          <li>
+            <span class="step-number">04</span>
+            <div>
+              <span class="step-code">one-change-at-a-time</span>
+              <h3>Mude uma coisa por vez.</h3>
+              <p>
+                Uma recomendação reversível, com impacto, escopo e caminho de
+                volta.
+              </p>
+            </div>
+            <span class="step-symbol" aria-hidden="true">↗</span>
+          </li>
+          <li>
+            <span class="step-number">05</span>
+            <div>
+              <span class="step-code">verify</span>
+              <h3>Meça de novo. Teste o fluxo.</h3>
+              <p>
+                Compare a mesma métrica e confirme que a capacidade útil
+                continua funcionando.
+              </p>
+            </div>
+            <span class="step-symbol" aria-hidden="true">✓</span>
+          </li>
+          <li>
+            <span class="step-number">06</span>
+            <div>
+              <span class="step-code">final report</span>
+              <h3>Saia com evidências.</h3>
+              <p>
+                Antes/depois, decisões, capacidades verificadas e pendências, em
+                um relatório.
+              </p>
+            </div>
+            <span class="step-symbol" aria-hidden="true">≡</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="principles wrap" aria-labelledby="principles-title">
+        <div class="principle-statement">
+          <span class="eyebrow">03 / MENOR POR PRINCÍPIO</span>
+          <h2 id="principles-title">
+            O plugin também<br />pratica o que<br /><span class="coral-text"
+              >recomenda.</span
+            >
+          </h2>
+          <p>
+            Uma skill principal. Referências carregadas quando precisam entrar
+            na conversa. Você fornece as evidências e mantém o controle das
+            mudanças.
+          </p>
+        </div>
+        <div class="principle-details">
+          <article>
+            <span class="principle-label">01 / ENXUTO</span>
+            <h3>Só o necessário.</h3>
+            <p>
+              Sem MCP, backend, hooks ou scripts locais no plugin. A V1 é um
+              pacote de instruções.
+            </p>
+          </article>
+          <article>
+            <span class="principle-label">02 / GUIADO</span>
+            <h3>Seu ambiente continua seu.</h3>
+            <p>
+              O coach trabalha com outputs e screenshots que você envia. Não
+              acessa seu computador.
+            </p>
+          </article>
+          <article>
+            <span class="principle-label">03 / REVERSÍVEL</span>
+            <h3>Preservar faz parte de reduzir.</h3>
+            <p>
+              Uma skill rara pode ser crítica. Cada decisão considera a stack,
+              as dependências e como reverter.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="start-section wrap section-space"
+        id="comecar"
+        aria-labelledby="start-title"
+      >
+        <div class="start-card">
+          <div>
+            <span class="eyebrow">04 / EXPLORE A V1</span>
+            <h2 id="start-title">
+              Seu próximo passo:<br /><span>uma boa baseline.</span>
+            </h2>
+            <p>
+              A V1 está aberta para revisão e testes. Conheça a skill no GitHub
+              e, com ela disponível em uma conversa, comece por este pedido:
+            </p>
+            <a
+              class="text-link"
+              href="https://github.com/tonymontezuma/Context-Hygiene/blob/main/skills/audit-claude-code/SKILL.md"
+              >Ler a skill de auditoria <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="prompt-card">
+            <div class="prompt-top">
+              <span class="mono">SEU PRIMEIRO PROMPT</span
+              ><span aria-hidden="true">↙</span>
+            </div>
+            <p id="starter-prompt">
+              Use Context Hygiene para auditar meu Claude Code. Vou fornecer
+              outputs e screenshots; comece pela baseline.
+            </p>
+            <button
+              id="copy-prompt"
+              class="button button-lime"
+              type="button"
+              hidden
+            >
+              Copiar prompt <span aria-hidden="true">⧉</span>
+            </button>
+            <p id="copy-status" class="copy-status" role="status"></p>
+          </div>
+        </div>
+        <p class="release-note">
+          V1 / 0.1.0 · Validação estrutural concluída. Avaliações
+          conversacionais e instalação nos hosts ainda pendentes.
+          <a
+            href="https://github.com/tonymontezuma/Context-Hygiene/blob/main/evals/REVIEW.md"
+            >Acompanhe a revisão ↗</a
+          >
+        </p>
+      </section>
+
+      <section class="faq wrap" aria-labelledby="faq-title">
+        <div>
+          <span class="eyebrow">05 / SEM CAIXA-PRETA</span>
+          <h2 id="faq-title">Vale saber.</h2>
+        </div>
+        <div class="faq-items">
+          <details>
+            <summary>
+              Isso reduz 87,4% dos meus tokens?<span aria-hidden="true">+</span>
+            </summary>
+            <p>
+              Esse percentual é a redução de skills marcadas como nunca usadas
+              no nosso caso anonimizado: de 389 para 49. Economia de tokens
+              precisa de uma medição própria e comparável. O processo busca
+              reduzir contexto dispensável, sem prometer um resultado universal.
+            </p>
+          </details>
+          <details>
+            <summary>
+              Funciona com Claude, Codex e Antigravity?<span aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>
+              A V1 foi estruturada como plugin de skills para ChatGPT/Codex, e o
+              ambiente auditado é o Claude Code. Quem usa Antigravity e outros
+              agentes pode conhecer e aproveitar os princípios do processo;
+              suporte nativo e auditoria desses ambientes não foram validados
+              nesta versão.
+            </p>
+          </details>
+          <details>
+            <summary>
+              O coach desliga ou apaga algo sozinho?<span aria-hidden="true"
+                >+</span
+              >
+            </summary>
+            <p>
+              Não. Ele analisa somente as evidências fornecidas por você, sugere
+              uma mudança reversível por vez e aguarda sua aplicação. Não há
+              acesso direto ao computador nem execução automática de alterações.
+            </p>
+          </details>
+          <details>
+            <summary>
+              O que preciso compartilhar?<span aria-hidden="true">+</span>
+            </summary>
+            <p>
+              Versão, stack, tarefas essenciais e outputs ou screenshots dos
+              diagnósticos solicitados, como Stats e /skills. Oculte chaves,
+              tokens e dados privados antes de enviar. A conversa permanece
+              sujeita às políticas do host.
+              <a
+                href="https://github.com/tonymontezuma/Context-Hygiene/blob/main/PRIVACY.md"
+                >Leia a política de privacidade.</a
+              >
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="footer wrap">
+      <div class="footer-main">
+        <a class="brand" href="#"
+          ><img src="assets/mark.svg" width="32" height="32" alt="" /><span
+            >context<span class="brand-light">hygiene</span
+            ><span class="brand-period">.</span></span
+          ></a
+        >
+        <p>Less context. Keep what matters.</p>
+        <a
+          class="text-link"
+          href="https://github.com/tonymontezuma/Context-Hygiene"
+          >Feito para ser aberto <span aria-hidden="true">↗</span></a
+        >
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Context Hygiene contributors · MIT</span>
+        <div>
+          <button id="motion-toggle" type="button" aria-pressed="false" hidden>
+            Pausar animações</button
+          ><a
+            href="https://github.com/tonymontezuma/Context-Hygiene/blob/main/PRIVACY.md"
+            >Privacidade</a
+          >
+        </div>
+        <span
+          >Projeto independente, sem afiliação aos fabricantes citados.</span
+        >
+      </div>
+    </footer>
+  </body>
+</html>
