@@ -2,6 +2,20 @@
   "use strict";
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const root = document.documentElement;
+  const siteHeader = document.querySelector(".site-header");
+  const updateHeaderOffset = () => {
+    root.style.setProperty(
+      "--header-offset",
+      `${siteHeader.getBoundingClientRect().height + 20}px`,
+    );
+  };
+  updateHeaderOffset();
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(updateHeaderOffset).observe(siteHeader);
+  } else {
+    window.addEventListener("resize", updateHeaderOffset);
+  }
+
   const english = root.lang === "en";
   const text = english
     ? {

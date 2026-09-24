@@ -35,3 +35,12 @@ Ferramentas de QA e capturas foram mantidas fora do repositório; não entram no
 - Seis âncoras internas válidas em PT/EN, sem IDs duplicados, e link externo do GitHub.
 - Menu revisado visualmente em desktop (1280 px) e em frames responsivos (PT 320 px / EN 390 px), com todos os links visíveis e quebra de linha.
 - Clique em V2 confirmado no navegador. Navegação usa links HTML nativos e não depende de JavaScript.
+
+## CTAs e cabeçalho fixo
+
+- Seis chamadas adicionais ao repositório em cada idioma, uma por seção, preservando os links específicos de documentação.
+- Cabeçalho sticky com fundo opaco. Menu horizontal em telas até 760 px para manter a altura compacta.
+- Clique em O processo no desktop: cabeçalho em y=0, limite inferior 124 px; seção começa em 144 px.
+- Navegação a V2 em frames de 320 px (PT) e 390 px (EN): seção começa em aproximadamente 147 px, abaixo do cabeçalho de 127 px; sem overflow horizontal da página.
+- Altura reservada para âncoras atualizada com ResizeObserver; fallback CSS e links nativos preservam a navegação sem JavaScript.
+- Sintaxe JavaScript e verificação de whitespace do Git passaram.

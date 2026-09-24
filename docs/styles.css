@@ -19,7 +19,7 @@
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 30px;
+  scroll-padding-top: var(--header-offset, 180px);
 }
 body {
   margin: 0;
@@ -83,13 +83,19 @@ img {
   letter-spacing: 0.1em;
   font-weight: 600;
 }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
 .header {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  border-bottom: 1px solid var(--line);
-  gap: 20px;
-  padding-block: 28px 18px;
+  gap: 10px;
+  padding-block: 12px;
 }
 .brand {
   display: inline-flex;
@@ -771,7 +777,7 @@ img {
   border-top: 1px solid var(--line);
   padding: 22px 0;
 }
-.faq details:last-child {
+.faq details:last-of-type {
   border-bottom: 1px solid var(--line);
 }
 .faq summary {
@@ -1338,5 +1344,44 @@ img {
   .main-nav a,
   .main-nav .nav-github {
     padding: 10px 12px;
+  }
+}
+
+.section-cta {
+  margin-top: 28px;
+}
+.section-cta a {
+  min-height: 44px;
+}
+.button-dark {
+  background: var(--bg);
+  color: var(--ink);
+}
+.button-dark:hover {
+  background: var(--surface);
+}
+@media (max-width: 760px) {
+  .header {
+    padding-block: 10px;
+    gap: 8px;
+  }
+  .main-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-width: 0;
+    padding: 6px;
+    scroll-padding-inline: 6px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--muted) var(--bg);
+  }
+  .main-nav a {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .main-nav a:focus-visible {
+    outline-offset: 1px;
+  }
+  .section-cta .button {
+    width: 100%;
   }
 }
