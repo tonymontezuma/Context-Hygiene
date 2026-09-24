@@ -105,17 +105,17 @@ img {
 .brand-period {
   color: var(--lime);
 }
-nav {
+.main-nav {
   display: flex;
   align-items: center;
   gap: 36px;
   font-size: 14px;
 }
-nav a:hover,
+.main-nav a:hover,
 .text-link:hover {
   color: var(--lime);
 }
-nav .nav-github {
+.main-nav .nav-github {
   border: 1px solid #505749;
   padding: 12px 17px;
   border-radius: 6px;
@@ -959,14 +959,14 @@ nav .nav-github {
     width: 30px;
     height: 30px;
   }
-  nav {
+  .main-nav {
     gap: 17px;
     font-size: 12px;
   }
-  nav a:nth-child(2) {
+  .main-nav a:nth-child(2) {
     display: none;
   }
-  nav .nav-github {
+  .main-nav .nav-github {
     padding: 9px 11px;
     gap: 10px;
   }
@@ -1192,7 +1192,7 @@ nav .nav-github {
   .wrap {
     width: calc(100% - 32px);
   }
-  nav > a:first-child {
+  .main-nav > a:first-child {
     display: none;
   }
   .hero h1 {
@@ -1220,5 +1220,70 @@ nav .nav-github {
   }
   .start-card h2 {
     font-size: 31px;
+  }
+}
+
+/* Language selection works without JavaScript. */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.language-switch {
+  display: flex;
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid #505749;
+  border-radius: 6px;
+  font-family: var(--mono);
+}
+.language-switch a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 32px;
+  border-radius: 3px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.language-switch a:hover {
+  color: var(--ink);
+  background: var(--surface);
+}
+.language-switch a[aria-current="page"] {
+  color: var(--bg);
+  background: var(--lime);
+}
+@media (max-width: 1050px) {
+  .header-actions {
+    gap: 16px;
+  }
+  .main-nav {
+    gap: 20px;
+  }
+}
+@media (max-width: 760px) {
+  .header {
+    height: auto;
+    min-height: 84px;
+    padding-block: 18px;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .header-actions {
+    display: contents;
+  }
+  .language-switch {
+    margin-left: auto;
+  }
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .main-nav a:nth-child(2),
+  .main-nav > a:first-child {
+    display: inline;
   }
 }

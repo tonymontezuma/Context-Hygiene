@@ -13,3 +13,12 @@ Data: 2026-09-24. Escopo: site estático; não substitui os evals conversacionai
 - Âncoras internas, arquivos locais e destinos dos links conferidos. Sintaxe JavaScript e formatação Git verificadas.
 
 Ferramentas de QA e capturas foram mantidas fora do repositório; não entram no site nem na skill. O site não inclui rastreadores, fontes remotas ou bibliotecas de execução externas.
+
+## Versões PT/EN
+
+- Português na raiz e inglês em `/en/`, com idioma do documento, título, descrição, Open Graph, canonical e hreflang correspondentes.
+- Seletor de idioma testado nos dois sentidos, preservando a âncora `#resultados` com JavaScript. Navegação PT → EN também confirmada sem JavaScript.
+- Ambas as versões sem overflow nas larguras 1440, 1024, 768, 390 e 320 px; visual desktop e mobile inspecionado.
+- Botões antes/depois mantêm 389 e 49 pontos ativos nos dois idiomas. Cópia do prompt e fallback de seleção de texto confirmados em português e inglês.
+- axe-core sem violações detectadas nas duas versões, em desktop e mobile, nas mesmas regras indicadas acima.
+- Estilos, scripts, logo e âncoras relativos conferidos em ambas as rotas. Documentação externa ainda em português identificada com `(PT)` na página inglesa.

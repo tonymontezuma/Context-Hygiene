@@ -18,3 +18,5 @@ Movimento: a matriz de 389 pontos se reduz a 49 ativos; barras do caso entram qu
 Comunicação: público de agentes de programação; V1 destinada a ChatGPT/Codex e auditando Claude Code. Antigravity é parte do público, sem alegação de integração validada. O índice de 87,4% é sempre associado a skills nunca usadas, nunca a tokens ou economia financeira. Barras de cada categoria são normalizadas ao seu próprio valor inicial.
 
 Publicação: HTML/CSS/JavaScript estáticos em docs/, via GitHub Pages. O JavaScript pertence à apresentação no navegador e não é um script local da skill. Este diretório não integra as instruções carregadas pela skill.
+
+Idiomas: português na raiz e inglês em en/. Ambas as páginas têm metadados e conteúdo próprios, com seletor PT/EN e estilos compartilhados. A escolha é explícita e não fica armazenada; com JavaScript, a troca preserva a seção atual. Na versão inglesa, links para a documentação ainda em português são sinalizados com (PT).

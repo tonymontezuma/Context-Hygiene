@@ -2,6 +2,33 @@
   "use strict";
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const root = document.documentElement;
+  const english = root.lang === "en";
+  const text = english
+    ? {
+        before: "before the audit",
+        after: "after the audit",
+        beforeLegend: "389 items in this metric",
+        afterLegend: "49 of 389 items",
+        paused: "Animations paused",
+        pause: "Pause animations",
+        copied: "Prompt copied. Paste it into your conversation.",
+        selected: "Text selected. Use your browser’s Copy option.",
+      }
+    : {
+        before: "antes da auditoria",
+        after: "depois da auditoria",
+        beforeLegend: "389 itens no indicador",
+        afterLegend: "49 de 389 itens",
+        paused: "Animações pausadas",
+        pause: "Pausar animações",
+        copied: "Prompt copiado. Cole na sua conversa.",
+        selected: "Texto selecionado. Use a opção Copiar do navegador.",
+      };
+  document.querySelectorAll(".language-switch a").forEach((link) => {
+    link.addEventListener("click", () => {
+      link.hash = window.location.hash;
+    });
+  });
   const grid = document.getElementById("context-grid");
   const controls = document.querySelector(".segmented");
   const motionButton = document.getElementById("motion-toggle");
@@ -25,11 +52,11 @@
     );
     document.getElementById("visual-count").textContent = after ? "49" : "389";
     document.getElementById("visual-state").textContent = after
-      ? "depois da auditoria"
-      : "antes da auditoria";
+      ? text.after
+      : text.before;
     document.getElementById("visual-legend").textContent = after
-      ? "49 de 389 itens"
-      : "389 itens no indicador";
+      ? text.afterLegend
+      : text.beforeLegend;
     controls
       .querySelectorAll("button")
       .forEach((button) =>
@@ -44,9 +71,7 @@
     motionPaused = paused;
     root.classList.toggle("motion-paused", paused);
     motionButton.setAttribute("aria-pressed", String(paused));
-    motionButton.textContent = paused
-      ? "Animações pausadas"
-      : "Pausar animações";
+    motionButton.textContent = paused ? text.paused : text.pause;
     if (paused) {
       clearTimeout(animationTimer);
       setView("after");
@@ -92,16 +117,17 @@
   copyButton.addEventListener("click", async () => {
     const prompt = document.getElementById("starter-prompt");
     try {
-      await navigator.clipboard.writeText(prompt.textContent);
-      status.textContent = "Prompt copiado. Cole na sua conversa.";
+      await navigator.clipboard.writeText(
+        prompt.textContent.trim().replace(/\s+/g, " "),
+      );
+      status.textContent = text.copied;
     } catch {
       const selection = window.getSelection();
       const range = document.createRange();
       range.selectNodeContents(prompt);
       selection.removeAllRanges();
       selection.addRange(range);
-      status.textContent =
-        "Texto selecionado. Use a opção Copiar do navegador.";
+      status.textContent = text.selected;
     }
   });
 })();

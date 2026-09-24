@@ -6,7 +6,7 @@ Coach de higiene de contexto do Claude Code, destinado a ChatGPT/Codex. Ajuda a 
 
 **V1 / 0.1.0 — código-fonte disponível para revisão.** Projeto independente do AIviation, no [repositório Context-Hygiene](https://github.com/tonymontezuma/Context-Hygiene). O plugin ainda não foi instalado nem publicado em marketplace ou diretório de plugins. Licença MIT adotada para esta primeira versão.
 
-[Conheça a apresentação e os resultados do processo](https://tonymontezuma.github.io/Context-Hygiene/).
+Conheça a apresentação e os resultados do processo: [Português](https://tonymontezuma.github.io/Context-Hygiene/) · [English](https://tonymontezuma.github.io/Context-Hygiene/en/).
 
 ## Como funciona
 
@@ -45,6 +45,8 @@ Uma única skill contém as instruções canônicas do produto, incluindo objeti
 Sem MCP, backend, hooks, scripts locais, telemetria, autenticação ou acesso ao computador. O coach também não usa ferramentas externas do host para investigar o ambiente auditado. A leitura do próprio pacote e dos anexos enviados é necessária à conversa e não autoriza inspeção do computador.
 
 A apresentação em `docs/` contém HTML, CSS, um logo SVG e JavaScript executado somente no navegador para animações e cópia de texto. Não adiciona ferramentas ou scripts à skill, não coleta dados e não carrega dependências externas. A identidade visual está documentada em [docs/BRAND.md](docs/BRAND.md). Para atualizar o site, altere `docs/` e envie para `main`; o GitHub Pages usa essa pasta como origem.
+
+As páginas em português (`docs/index.html`) e inglês (`docs/en/index.html`) compartilham estilos e interações. Ao alterar conteúdo ou resultados, atualize ambas; mensagens dinâmicas por idioma ficam em `docs/app.js`. O seletor PT/EN funciona sem JavaScript, não usa cookies e não redireciona automaticamente. A documentação do plugin permanece em português.
 
 ## Revisar e experimentar
 
