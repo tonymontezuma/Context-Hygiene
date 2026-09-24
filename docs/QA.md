@@ -29,3 +29,9 @@ Ferramentas de QA e capturas foram mantidas fora do repositório; não entram no
 - Ambas as versões inspecionadas no navegador a 1280 px, com três cartões e sem overflow horizontal. CSS empilha os cartões abaixo de 800 px; esse breakpoint não foi validado visualmente nesta alteração.
 - Novos pares de texto conferidos: secundário/superfície 8,83:1; coral/superfície 7,64:1; texto escuro/coral 8,54:1 (mínimo 4,5:1).
 - Avaliações ainda não ativas. Proposta e perguntas em FEEDBACK.md; depende de criar e conectar um formulário real.
+
+## Menu de seções
+
+- Seis âncoras internas válidas em PT/EN, sem IDs duplicados, e link externo do GitHub.
+- Menu revisado visualmente em desktop (1280 px) e em frames responsivos (PT 320 px / EN 390 px), com todos os links visíveis e quebra de linha.
+- Clique em V2 confirmado no navegador. Navegação usa links HTML nativos e não depende de JavaScript.
