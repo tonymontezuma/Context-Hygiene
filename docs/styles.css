@@ -906,6 +906,18 @@ img {
   font-size: 13px;
   color: var(--muted);
 }
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.footer-contact a {
+  overflow-wrap: anywhere;
+}
 .footer-bottom {
   display: flex;
   align-items: center;
