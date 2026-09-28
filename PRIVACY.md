@@ -1,8 +1,14 @@
 # Privacidade — Context Hygiene V1
 
-Versão 0.2.0 · 2026-09-28
+Versão 0.2.1 Beta · 2026-09-28
 
 O plugin Context Hygiene é um pacote de instruções e referências. Não possui serviço próprio, banco de dados, telemetria, login, conectores ou código de coleta. Seu responsável não recebe os conteúdos de auditoria por um canal do plugin.
+
+## Bootstrap de instalação
+
+O Beta Bootstrap Prompt pede ao coding agent para obter este repositório oficial, identificar o host e instalar/verificar apenas a skill no projeto, conforme INSTALL.md e as permissões do host. Essa fase usa as ferramentas do próprio agente e deixa os arquivos de instalação no projeto; não é um coletor do Context Hygiene. Ela não autoriza componentes opcionais nem amplia a auditoria para inspeção automática. Após carregar a skill, valem os limites abaixo.
+
+Os botões do site copiam somente o texto do prompt escolhido, sem ler a área de transferência ou enviá-la a um serviço. O link de Beta Test abre um template no GitHub; o usuário revisa e envia manualmente um relato público associado à sua conta.
 
 ## Dados usados
 

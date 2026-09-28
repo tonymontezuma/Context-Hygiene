@@ -1,20 +1,35 @@
-# Verificação da apresentação — V1 / 0.2.0
+# Registro de revisão — V1 / 0.2.1 Beta
 
-Data: 2026-09-28. Site estático PT/EN; estes resultados não homologam o comportamento da skill.
+Data: 2026-09-28. Core único com quatro adapters documentais e OpenCode experimental; pacote de instruções, sem runtime de auditoria. Revisão da versão anterior permanece no histórico Git.
 
-## Verificado nesta versão
+## Executado nesta versão
 
-- Identidade visual existente preservada; copy, metadados, quatro plataformas, Teach When Relevant, WHAT / WHERE / WHEN, Multiple e convite ao piloto atualizados nos dois idiomas.
-- Navegador real: PT/EN sem overflow horizontal em 320, 375, 414, 768, 1024, 1280 e 1440 px (largura do documento igual à viewport).
-- Captura desktop PT e capturas de viewport mobile PT/EN inspecionadas. Conteúdo principal legível a 320 px. Captura mobile de página inteira apresentou artefatos de repetição; foi substituída pela inspeção da viewport.
-- Links locais e Markdown, âncoras, IDs únicos, um H1 por página e metadados conferidos. Tag existente de Search Console e GA4 preservadas.
-- Menu mobile abre, Escape fecha; FAQ abre; botão de cópia produz confirmação; visual histórico alterna 389/49 nos dois idiomas. Nenhum erro de página durante essas interações.
-- Sintaxe JavaScript e git diff --check passaram.
+| Verificação | Resultado |
+|---|---|
+| Skill pelo quick_validate.py de skill-creator | Passou |
+| Manifesto Codex pelo validate_plugin.py de plugin-creator | Passou |
+| Manifesto portátil contra schema Agent Plugins declarado | Passou |
+| Nome, versão, descrição, autor, licença e repositório consistentes | Passou |
+| Uma única skill descobrível e referências locais resolvidas | Passou |
+| Estrutura JSON dos 38 casos, IDs únicos e rubricas | Passou |
+| Schema de métricas: payload válido e medidas desconhecidas | Passou |
+| Schema rejeita campos extras em todos os níveis, versão privada e valores negativos | Passou |
+| Links Markdown/HTML, âncoras e metadados PT/EN | Passou |
+| git diff --check e sintaxe do JavaScript do site | Passou |
 
-O caso 389 → 49 está marcado como histórico, sem relação causal demonstrada com a versão 0.2.0, tokens, tempo ou dinheiro. A FAQ antiga que sugeria possível redução de 87,4% dos tokens foi corrigida.
+Validadores e dependências temporários ficaram fora do produto. A validação de schema é estrutural: não demonstra consentimento, anonimização efetiva ou obediência do modelo. Os perfis incluem fontes oficiais consultadas em 2026-09-28. O site tem registro próprio em [QA.md](../docs/QA.md).
 
-O site mantém GA4, separado das métricas opt-in da auditoria, conforme [PRIVACY.md](../PRIVACY.md). Não há formulário novo, endpoint de métricas ou envio de auditorias ao Analytics. Ferramentas e capturas de QA ficaram fora do repositório.
+## Bootstrap Beta
 
-## Limites
+Prompts PT/EN conferidos contra o texto exibido e copiado nas duas páginas. INSTALL.md define instalação de uma única skill no projeto, reconhecimento por host, tratamento de cópias existentes, limites de permissão e verificação de carregamento. O template Beta Test tem YAML válido e campos para instalação, auditoria e resultados opcionais. Essas verificações documentais não provam execução do bootstrap por um agente.
 
-Não foram repetidos nesta versão a suíte axe-core, todos os testes sem JavaScript nem a avaliação de movimento reduzido. Resultados da versão anterior estão no histórico Git e não são apresentados como verificação atual. Compatibilidade nativa do plugin e avaliações conversacionais constam separadamente em [REVIEW.md](../evals/REVIEW.md).
+## Pendente
+
+- Bootstrap ponta a ponta em Codex, Antigravity, OpenCode e Claude Code (Cursor também documentado), incluindo detecção incerta, cópia existente, falta de permissão e necessidade de nova sessão.
+- CH01–CH38 em sessões independentes com evidência de resposta por rubrica.
+- Instalação/descoberta nativa em Claude Code, Codex, Google Antigravity, Cursor e OpenCode experimental.
+- Auditoria real ponta a ponta nas plataformas documentadas e no modo Multiple.
+- Teste visual de entrada por screenshots e comparação controlada com/sem skill.
+- Validação de economia de tokens, tempo ou dinheiro; não demonstrada por contagens.
+
+Status: **disponível para piloto**, sem alegação de homologação comportamental ou publicação em marketplace. Nenhum PR foi mesclado. O guia [TESTING.md](../docs/TESTING.md) orienta os testes pelos amigos e [FEEDBACK.md](../docs/FEEDBACK.md) explica o retorno voluntário.

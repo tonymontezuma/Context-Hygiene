@@ -6,7 +6,7 @@ Context Hygiene é um coach/auditor de contexto para coding agents. **Trabalhamo
 
 O objetivo é reduzir ruído, tempo e dinheiro desperdiçados **sem remover capacidades úteis**. Não prometemos percentuais de economia nem otimizamos por quantidade de componentes.
 
-**V1 · versão 0.2.0 · aberta para testes.** Core único + adapters documentais para **Claude Code, Codex, Google Antigravity e Cursor**, incluindo **Multiple / cross-agent**. Instalação nativa e homologação comportamental por plataforma continuam pendentes; consulte o [registro de revisão](evals/REVIEW.md). Nome do produto preservado: Context Hygiene.
+**V1 · versão 0.2.1 Beta · aberta para testes.** Core único + adapters documentais para **Claude Code, Codex, Google Antigravity e Cursor**, incluindo **Multiple / cross-agent**. Instalação nativa e homologação comportamental por plataforma continuam pendentes; consulte o [registro de revisão](evals/REVIEW.md). Nome do produto preservado: Context Hygiene.
 
 [Site em português](https://tonymontezuma.github.io/Context-Hygiene/) · [English](https://tonymontezuma.github.io/Context-Hygiene/en/) · [Guia para testar](docs/TESTING.md) · [Feedback](docs/FEEDBACK.md)
 
@@ -28,7 +28,7 @@ Também avaliamos sobrecarga, escopo e ativação inadequados. Você fornece evi
 
 Instalado, listado, carregado e usado são coisas diferentes. Remove candidate é recomendação, não modo de ativação. Cada item também recebe Project Relevance com justificativa; uma capacidade rara pode ser indispensável.
 
-## Um Core, quatro adapters
+## Um Core, quatro adapters e um perfil experimental
 
 A [skill audit-context](skills/audit-context/SKILL.md) é o único Core. Os [adapters](skills/audit-context/references/adapters/README.md) interpretam evidências e mecanismos específicos sem replicar o fluxo. Não são conectores nem executáveis. Fontes oficiais e limites por versão estão em cada perfil.
 
@@ -40,7 +40,7 @@ No modo Multiple, o mapa relaciona fontes e consumidores para encontrar sobrepos
 skills/audit-context/
 ├── SKILL.md                         # Core
 └── references/
-    ├── adapters/                    # Claude Code, Codex, Antigravity, Cursor
+    ├── adapters/                    # Quatro perfis V1 + OpenCode experimental
     ├── context-map.md               # WHAT / WHERE / WHEN e cross-agent
     ├── decision-rules.md
     ├── audit-flow.md
@@ -51,7 +51,19 @@ skills/audit-context/
 
 Somente instruções e referências sob demanda. Sem MCP próprio, backend, hooks, scripts de auditoria, contas, monitoramento ou bulk cleanup. O usuário faz as alterações; o coach não usa ferramentas do host para investigar o ambiente. Esses limites são comportamentais, não uma sandbox que revoga permissões do host.
 
-## Experimente em um projeto
+## Experimente o Beta com um prompt
+
+No [site](https://tonymontezuma.github.io/Context-Hygiene/#comecar), use **Copiar em português** ou **Copiar em inglês** e cole o Beta Bootstrap Prompt no coding agent, dentro do projeto. O prompt usa diretamente este repositório oficial, sem URL para preencher.
+
+**Para o agente que recebeu o bootstrap: siga [INSTALL.md](INSTALL.md).** Identifique o host, instale somente a skill deste projeto, verifique descoberta/carregamento e inicie a auditoria. A instalação solicitada não autoriza componentes opcionais nem varredura do ambiente durante a auditoria. Se a plataforma/permissão for incerta, informe a limitação.
+
+[Prompt PT](docs/bootstrap/pt.txt) · [Prompt EN](docs/bootstrap/en.txt) · [Relatar Beta Test](https://github.com/tonymontezuma/Context-Hygiene/issues/new?template=beta-test.yml)
+
+Alvos do mesmo bootstrap: Codex, Google Antigravity, OpenCode e Claude Code; Cursor também tem instruções. OpenCode tem [adapter experimental](skills/audit-context/references/adapters/opencode.md), adicional aos quatro perfis V1. Testes ponta a ponta continuam pendentes — o Beta serve para coletar esses resultados, não para prometer instalação universal.
+
+**Beta:** o comportamento de instalação varia conforme o coding agent e suas permissões. Context Hygiene não deve fazer alterações opcionais sem sua autorização.
+
+## Alternativa sem bootstrap
 
 Siga o [guia de teste](docs/TESTING.md): ele oferece um caminho sem instalação e um teste opcional de descoberta nativa. Com a skill e referências disponíveis em uma conversa nova:
 
@@ -65,7 +77,7 @@ Siga o [guia de teste](docs/TESTING.md): ele oferece um caminho sem instalação
 
 Depois do relatório, você pode avaliar a utilidade e optar por preparar números/metadados não sensíveis para revisão e compartilhamento manual. **Desligado por padrão; sem coletor, envio automático ou persistência própria.** Recusar não limita a auditoria. O [schema fechado](skills/audit-context/references/metrics.schema.json) prepara benchmarking futuro; ranking e benchmark público não fazem parte da V1. Leia [PRIVACY.md](PRIVACY.md).
 
-Contagens não medem tokens, latência ou dinheiro. O [caso histórico 389 → 49](skills/audit-context/references/benchmark.md) mede skills marcadas como nunca usadas: não é resultado da versão 0.2.0, meta universal ou prova de economia.
+Contagens não medem tokens, latência ou dinheiro. O [caso histórico 389 → 49](skills/audit-context/references/benchmark.md) mede skills marcadas como nunca usadas: não é resultado deste Beta, meta universal ou prova de economia.
 
 ## Testes e contribuição
 

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "context-hygiene",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Coach de contexto para coding agents: relevância por projeto, auditoria guiada e uma mudança mensurável por vez.",
   "author": {
     "name": "Context Hygiene contributors"

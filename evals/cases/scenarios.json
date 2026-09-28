@@ -1,5 +1,5 @@
 {
-  "suite_version": "0.2.0",
+  "suite_version": "0.2.1",
   "format": "context-hygiene-conversation-cases-v1",
   "data_policy": "Entradas sintéticas; CH18 usa somente agregados do benchmark fornecido. Screenshot CH13 é transcrição, não teste visual.",
   "cases": [
