@@ -2,7 +2,7 @@
 
 Obrigado por testar Context Hygiene. Uma auditoria que conclui “nada precisa mudar” também ajuda a avaliar o produto.
 
-Envie manualmente pelo [GitHub Issues](https://github.com/tonymontezuma/Context-Hygiene/issues) ou por [e-mail](mailto:contexthygiene@gmail.com). Issues são públicos; e-mail revela remetente ao destinatário. Não envie segredos, código privado, prompts completos, caminhos, repositórios privados ou screenshots sem redação. Nenhum formulário/coletor está ativo.
+Envie manualmente pelo [GitHub Issues](https://github.com/tonymontezuma/Context-Hygiene/issues) ou por [e-mail](mailto:contexthygiene@gmail.com). Issues são públicos; e-mail revela remetente ao destinatário. Não envie segredos, código privado, prompts completos, caminhos, repositórios privados ou screenshots sem redação. Não há coletor automático de feedback. Os [templates de Issues](https://github.com/tonymontezuma/Context-Hygiene/issues/new/choose) organizam Bug Report, Beta Test Result, Feature Request e Platform Compatibility; veja também [CONTRIBUTING.md](../CONTRIBUTING.md).
 
 ## Modelo curto
 

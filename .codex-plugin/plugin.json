@@ -5,7 +5,7 @@
   "author": {
     "name": "Context Hygiene contributors"
   },
-  "license": "MIT",
+  "license": "AGPL-3.0-only",
   "repository": "https://github.com/tonymontezuma/Context-Hygiene",
   "skills": "./skills/",
   "interface": {
