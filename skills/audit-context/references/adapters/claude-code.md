@@ -1,6 +1,6 @@
 # Modelo do Claude Code
 
-Referência técnica conferida em 2026-09-24. O comportamento observado na versão e interface informadas pelo usuário orienta a execução. Se divergir, peça um recorte da ajuda/tela disponível; não improvise comandos ou chaves.
+Referência técnica conferida em 2026-09-28. O comportamento observado na versão e interface informadas pelo usuário orienta a execução. Se divergir, peça um recorte da ajuda/tela disponível; não improvise comandos ou chaves.
 
 ## Componentes e estados
 
@@ -45,3 +45,9 @@ Hooks devem ser avaliados pela função, evento e conteúdo efetivamente devolvi
 MCPs podem carregar descrições de ferramentas sob demanda. Não atribua um custo fixo a cada servidor nem prometa economia ao desabilitá-lo. Conexão com erro exige diagnóstico de necessidade e origem do erro.
 
 Fontes: [Memória](https://code.claude.com/docs/en/memory), [Hooks](https://code.claude.com/docs/en/hooks) e [MCP](https://code.claude.com/docs/en/mcp).
+
+## Tradução para o Core
+
+Peça plataforma/versão e diagnóstico fornecido pelo usuário; Stats é opcional, um inventário manual parcial serve. Considere CLAUDE.md, instruções, Agents, Commands e memória conforme aparecerem nas evidências.
+
+`on` e `name-only` permitem descoberta (Conditional para o corpo da Skill); `user-only` corresponde a Explicit e `off` a Disabled. O catálogo pode expor nome/descrição persistentemente sem carregar o corpo. Para instruções, registre alcance e leitura efetiva antes de marcar Always. Nunca use essa tabela como configuração de Codex, Cursor ou Antigravity.

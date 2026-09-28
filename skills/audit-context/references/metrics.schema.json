@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Context Hygiene voluntary metrics v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "product_version": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "platforms": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "platform": {
+            "enum": [
+              "claude-code",
+              "codex",
+              "antigravity",
+              "cursor"
+            ]
+          },
+          "version": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^\\d+\\.\\d+\\.\\d+$"
+          },
+          "measurements": {
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "metric": {
+                  "enum": [
+                    "skills_count",
+                    "plugins_count",
+                    "mcp_servers_count",
+                    "hooks_count",
+                    "agents_count",
+                    "rules_count",
+                    "warnings_count",
+                    "persistent_context_tokens",
+                    "task_duration_seconds",
+                    "measured_cost_usd",
+                    "measured_cost_brl"
+                  ]
+                },
+                "before": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "after": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "method": {
+                  "enum": [
+                    "host_reported",
+                    "manual_count",
+                    "measured",
+                    "estimated"
+                  ]
+                },
+                "comparable": {
+                  "type": "boolean"
+                },
+                "capability_test": {
+                  "enum": [
+                    "passed",
+                    "failed",
+                    "not_tested"
+                  ]
+                }
+              },
+              "required": [
+                "metric",
+                "before",
+                "after",
+                "method",
+                "comparable",
+                "capability_test"
+              ],
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "metric": {
+                        "enum": [
+                          "skills_count",
+                          "plugins_count",
+                          "mcp_servers_count",
+                          "hooks_count",
+                          "agents_count",
+                          "rules_count",
+                          "warnings_count"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "before": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ]
+                      },
+                      "after": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ]
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "metric": {
+                        "enum": [
+                          "measured_cost_usd",
+                          "measured_cost_brl"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "method": {
+                        "const": "measured"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "platform",
+          "version",
+          "measurements"
+        ]
+      }
+    },
+    "mode": {
+      "enum": [
+        "single",
+        "multiple"
+      ]
+    },
+    "usefulness": {
+      "enum": [
+        "yes",
+        "partially",
+        "no",
+        "not_answered"
+      ]
+    },
+    "decisions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kept": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reverted": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "skipped": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pending": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "kept",
+        "reverted",
+        "skipped",
+        "pending"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "product_version",
+    "platforms",
+    "mode",
+    "usefulness",
+    "decisions"
+  ]
+}

@@ -1,6 +1,6 @@
 # Privacidade — Context Hygiene V1
 
-Versão 0.1.0 · 2026-09-24
+Versão 0.2.0 · 2026-09-28
 
 O plugin Context Hygiene é um pacote de instruções e referências. Não possui serviço próprio, banco de dados, telemetria, login, conectores ou código de coleta. Seu responsável não recebe os conteúdos de auditoria por um canal do plugin.
 
@@ -18,7 +18,15 @@ Oculte tokens, chaves de API, senhas, endereços privados e dados pessoais desne
 
 Os conteúdos enviados continuam sujeitos às configurações e políticas do ChatGPT/Codex ou de outro host usado. Ausência de telemetria própria não significa ausência de processamento ou retenção pela plataforma. O plugin não garante execução offline, apagamento de mensagens ou isolamento técnico do host. Seus limites de acesso são instruções de comportamento, não uma sandbox que revoga ferramentas do host.
 
-Snapshots e relatórios permanecem na conversa. Não há persistência própria nem gravação automática no computador. O usuário controla eventual cópia/exportação. O benchmark contém apenas contagens agregadas; os demais casos de avaliação usam dados sintéticos. Logs de testes reais não devem ser incorporados ao repositório sem anonimização e decisão explícita do responsável.
+Snapshots e relatórios permanecem na conversa. Não há persistência própria nem gravação automática no computador. O usuário controla eventual cópia/exportação. O caso histórico contém apenas contagens agregadas; os demais casos de avaliação usam dados sintéticos. Logs de testes reais não devem ser incorporados ao repositório sem anonimização e decisão explícita do responsável.
+
+## Métricas pós-auditoria: opt-in, desligadas por padrão
+
+Após o relatório, o usuário pode pedir um bloco revisável de números e metadados não sensíveis, conforme o [schema fechado](skills/audit-context/references/metrics.schema.json). Não há coletor, endpoint, envio automático ou armazenamento próprio. Recusa ou silêncio mantém a opção desligada; a auditoria funciona integralmente sem compartilhar resultados.
+
+O bloco permite somente plataformas e versões públicas numéricas, contagens, medidas before/after, comparabilidade, resultado de teste, decisões e utilidade em campos controlados. Exclui código, prompts, conteúdos, nomes de projetos/pessoas, caminhos, repositórios, URLs e identificadores persistentes. Não medido é null, nunca zero. Não incorpora a conversa nem anexos.
+
+O usuário revisa e decide se envia manualmente. Issues são públicos e identificados pela conta; e-mail expõe remetente/metadados ao destinatário. Não prometemos anonimato absoluto. Consentimento para preparar métricas não autoriza envio ou publicação. A preferência “não perguntar novamente” é respeitada na conversa, sem promessa de memória entre sessões. Não há benchmark público, ranking ou uso automático desses resultados.
 
 ## Site de apresentação
 

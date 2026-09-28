@@ -1445,3 +1445,23 @@ img {
     width: 100%;
   }
 }
+
+/* V1 project-first copy uses the existing visual system. */
+.hero h1 {
+  font-size: clamp(2.45rem, 5vw, 4.7rem);
+  overflow-wrap: anywhere;
+}
+.hero-copy,
+.steps li > div,
+.roadmap-grid article {
+  min-width: 0;
+}
+.step-code {
+  overflow-wrap: anywhere;
+}
+.footer-main > p {
+  max-width: 28rem;
+}
+.mental-model {
+  margin-top: 3rem;
+}

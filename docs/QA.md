@@ -1,55 +1,20 @@
-# Verificação da apresentação
+# Verificação da apresentação — V1 / 0.2.0
 
-Data: 2026-09-24. Escopo: site estático; não substitui os evals conversacionais do plugin.
+Data: 2026-09-28. Site estático PT/EN; estes resultados não homologam o comportamento da skill.
 
-- Layout inspecionado em capturas desktop e mobile. Larguras de 1440, 768, 390 e 320 px sem overflow horizontal.
-- Visualização interativa: 389 pontos ativos em Antes, 49 em Depois.
-- Percentuais conferidos com os dados do benchmark: total 87,4%; user 78,5%; synced 62,5%; plugin 93,3%.
-- Cópia do prompt confirmada; FAQ abre; controle de animações alterna o estado.
-- Preferência por movimento reduzido respeitada: transições com duração zero e rolagem sem animação.
-- Sem JavaScript: título, conteúdo, métricas e barras disponíveis; botões dependentes de JavaScript ficam ocultos.
-- axe-core, regras WCAG 2 A/AA e 2.1 AA: nenhuma violação detectada nas verificações desktop e mobile. Isso não constitui certificação integral de acessibilidade.
-- Console do navegador sem erros ou warnings durante os testes locais.
-- Âncoras internas, arquivos locais e destinos dos links conferidos. Sintaxe JavaScript e formatação Git verificadas.
+## Verificado nesta versão
 
-Ferramentas de QA e capturas foram mantidas fora do repositório; não entram no site nem na skill. O site não inclui rastreadores, fontes remotas ou bibliotecas de execução externas.
+- Identidade visual existente preservada; copy, metadados, quatro plataformas, Teach When Relevant, WHAT / WHERE / WHEN, Multiple e convite ao piloto atualizados nos dois idiomas.
+- Navegador real: PT/EN sem overflow horizontal em 320, 375, 414, 768, 1024, 1280 e 1440 px (largura do documento igual à viewport).
+- Captura desktop PT e capturas de viewport mobile PT/EN inspecionadas. Conteúdo principal legível a 320 px. Captura mobile de página inteira apresentou artefatos de repetição; foi substituída pela inspeção da viewport.
+- Links locais e Markdown, âncoras, IDs únicos, um H1 por página e metadados conferidos. Tag existente de Search Console e GA4 preservadas.
+- Menu mobile abre, Escape fecha; FAQ abre; botão de cópia produz confirmação; visual histórico alterna 389/49 nos dois idiomas. Nenhum erro de página durante essas interações.
+- Sintaxe JavaScript e git diff --check passaram.
 
-## Versões PT/EN
+O caso 389 → 49 está marcado como histórico, sem relação causal demonstrada com a versão 0.2.0, tokens, tempo ou dinheiro. A FAQ antiga que sugeria possível redução de 87,4% dos tokens foi corrigida.
 
-- Português na raiz e inglês em `/en/`, com idioma do documento, título, descrição, Open Graph, canonical e hreflang correspondentes.
-- Seletor de idioma testado nos dois sentidos, preservando a âncora `#resultados` com JavaScript. Navegação PT → EN também confirmada sem JavaScript.
-- Ambas as versões sem overflow nas larguras 1440, 1024, 768, 390 e 320 px; visual desktop e mobile inspecionado.
-- Botões antes/depois mantêm 389 e 49 pontos ativos nos dois idiomas. Cópia do prompt e fallback de seleção de texto confirmados em português e inglês.
-- axe-core sem violações detectadas nas duas versões, em desktop e mobile, nas mesmas regras indicadas acima.
-- Estilos, scripts, logo e âncoras relativos conferidos em ambas as rotas. Documentação externa ainda em português identificada com `(PT)` na página inglesa.
+O site mantém GA4, separado das métricas opt-in da auditoria, conforme [PRIVACY.md](../PRIVACY.md). Não há formulário novo, endpoint de métricas ou envio de auditorias ao Analytics. Ferramentas e capturas de QA ficaram fora do repositório.
 
-## Prévia da V2
+## Limites
 
-- Conteúdo PT/EN alinhado à direção documentada no README: companion opcional, somente leitura, escopos explícitos e snapshots comparáveis; marcado como planejamento sem data.
-- Ambas as versões inspecionadas no navegador a 1280 px, com três cartões e sem overflow horizontal. CSS empilha os cartões abaixo de 800 px; esse breakpoint não foi validado visualmente nesta alteração.
-- Novos pares de texto conferidos: secundário/superfície 8,83:1; coral/superfície 7,64:1; texto escuro/coral 8,54:1 (mínimo 4,5:1).
-- Avaliações ainda não ativas. Proposta e perguntas em FEEDBACK.md; depende de criar e conectar um formulário real.
-
-## Menu de seções
-
-- Seis âncoras internas válidas em PT/EN, sem IDs duplicados, e link externo do GitHub.
-- Menu revisado visualmente em desktop (1280 px) e em frames responsivos (PT 320 px / EN 390 px), com todos os links visíveis e quebra de linha.
-- Clique em V2 confirmado no navegador. Navegação usa links HTML nativos e não depende de JavaScript.
-
-## CTAs e cabeçalho fixo
-
-- Seis chamadas adicionais ao repositório em cada idioma, uma por seção, preservando os links específicos de documentação.
-- Cabeçalho sticky com fundo opaco. Menu horizontal em telas até 760 px para manter a altura compacta.
-- Clique em O processo no desktop: cabeçalho em y=0, limite inferior 124 px; seção começa em 144 px.
-- Navegação a V2 em frames de 320 px (PT) e 390 px (EN): seção começa em aproximadamente 147 px, abaixo do cabeçalho de 127 px; sem overflow horizontal da página.
-- Altura reservada para âncoras atualizada com ResizeObserver; fallback CSS e links nativos preservam a navegação sem JavaScript.
-- Sintaxe JavaScript e verificação de whitespace do Git passaram.
-
-## Cabeçalho em linha e menu mobile
-
-- Desktop em 1280 px: logo, navegação, GitHub e idiomas alinhados em uma linha, nessa ordem.
-- Até 1100 px: botão de três linhas abre as seis seções; até 600 px a marca usa o símbolo para caber junto ao GitHub e aos idiomas.
-- PT 320 px / EN 390 px revisados em frames responsivos, sem overflow horizontal. Abertura com Enter e clique, fechamento com Escape e ao escolher V2 verificados.
-- Estado aria-expanded e rótulos Abrir/Fechar menu ou Open/Close menu acompanham a interação. Escape devolve o foco ao botão.
-- Âncora V2 após fechar o menu em inglês ficou em y=85 px, abaixo do cabeçalho de 65 px.
-- Links continuam disponíveis sem JavaScript por CSS de melhoria progressiva; sintaxe JavaScript e git diff --check passaram.
+Não foram repetidos nesta versão a suíte axe-core, todos os testes sem JavaScript nem a avaliação de movimento reduzido. Resultados da versão anterior estão no histórico Git e não são apresentados como verificação atual. Compatibilidade nativa do plugin e avaliações conversacionais constam separadamente em [REVIEW.md](../evals/REVIEW.md).

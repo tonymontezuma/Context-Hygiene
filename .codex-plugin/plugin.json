@@ -1,7 +1,7 @@
 {
   "name": "context-hygiene",
-  "version": "0.1.0",
-  "description": "Auditoria guiada do Claude Code: mínimo contexto, máxima utilidade, com evidências fornecidas pelo usuário.",
+  "version": "0.2.0",
+  "description": "Coach de contexto para coding agents: relevância por projeto, auditoria guiada e uma mudança mensurável por vez.",
   "author": {
     "name": "Context Hygiene contributors"
   },
@@ -10,13 +10,13 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Context Hygiene",
-    "shortDescription": "Revise o contexto do Claude Code sem perder capacidades úteis.",
-    "longDescription": "Coach de auditoria que analisa outputs e screenshots fornecidos por você, propõe uma mudança reversível por vez e compara antes e depois. Sem acesso direto ao computador.",
+    "shortDescription": "O contexto certo, para o projeto certo, no momento certo.",
+    "longDescription": "Trabalha com você para avaliar Skills, Agents, MCPs e instruções em Claude Code, Codex, Google Antigravity e Cursor. Um Core, adapters sob demanda, evidências fornecidas por você e mudanças manuais verificadas.",
     "developerName": "Context Hygiene contributors",
     "category": "Productivity",
     "capabilities": [],
     "defaultPrompt": [
-      "Audite meu Claude Code com os outputs que eu fornecer."
+      "Use Context Hygiene para auditar o contexto dos agentes deste projeto. Comece pela plataforma, uso real e baseline."
     ]
   }
 }

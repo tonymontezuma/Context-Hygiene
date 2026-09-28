@@ -1,73 +1,76 @@
 # Context Hygiene
 
-**Less context. Keep what matters.**
+**O contexto certo, para o projeto certo, no momento certo.**
 
-Coach de higiene de contexto do Claude Code, destinado a ChatGPT/Codex. Ajuda a identificar contexto dispensável com evidências fornecidas pelo usuário e preserva os fluxos úteis do projeto.
+Context Hygiene é um coach/auditor de contexto para coding agents. **Trabalhamos junto com você — work with you.** Uma Skill, MCP ou Agent recomendado por terceiros pode ser útil, redundante ou inadequado ao seu projeto. Não confie cegamente na recomendação: entenda a função, o alcance e o uso real antes de decidir.
 
-**V1 / 0.1.0 — código-fonte disponível para revisão.** Projeto independente do AIviation, no [repositório Context-Hygiene](https://github.com/tonymontezuma/Context-Hygiene). O plugin ainda não foi instalado nem publicado em marketplace ou diretório de plugins. Licença MIT adotada para esta primeira versão.
+O objetivo é reduzir ruído, tempo e dinheiro desperdiçados **sem remover capacidades úteis**. Não prometemos percentuais de economia nem otimizamos por quantidade de componentes.
 
-Conheça a apresentação e os resultados do processo: [Português](https://tonymontezuma.github.io/Context-Hygiene/) · [English](https://tonymontezuma.github.io/Context-Hygiene/en/).
+**V1 · versão 0.2.0 · aberta para testes.** Core único + adapters documentais para **Claude Code, Codex, Google Antigravity e Cursor**, incluindo **Multiple / cross-agent**. Instalação nativa e homologação comportamental por plataforma continuam pendentes; consulte o [registro de revisão](evals/REVIEW.md). Nome do produto preservado: Context Hygiene.
+
+[Site em português](https://tonymontezuma.github.io/Context-Hygiene/) · [English](https://tonymontezuma.github.io/Context-Hygiene/en/) · [Guia para testar](docs/TESTING.md) · [Feedback](docs/FEEDBACK.md)
 
 ## Como funciona
 
-`baseline → inventory → analysis → one-change-at-a-time → verify → final report`
+Após identificar plataforma, projeto, tarefas essenciais e baseline:
 
-O usuário informa versão, interface, stack e tarefas essenciais, depois fornece outputs ou screenshots redigidos. O coach interpreta `/plugin → Stats`, `/skills` e outros diagnósticos necessários, propõe uma mudança reversível e aguarda aplicação pelo usuário. A próxima mudança depende de nova medição e teste da capacidade preservada.
+**Inventory → Context Map → Scope → Activation → Project Relevance → Duplication / Conflict / Overlap / Stale / Capability Bloat → recomendação → uma mudança por vez → medir before/after → keep/revert.**
 
-As skills recebem classificação `on`, `name-only`, `user-only` ou `off`. Skills de plugins são tratadas pelo plugin, sem aplicar `skillOverrides` indevidamente. Global, projeto, local e gerenciado são escopos distintos. Não há remoção em massa, meta de redução ou score artificial. “Nenhuma alteração recomendada” é um resultado válido.
+Também avaliamos sobrecarga, escopo e ativação inadequados. Você fornece evidências mínimas e redigidas; o coach constrói o mapa, explica a recomendação e aguarda sua decisão/aplicação. A próxima mudança depende da medição equivalente e do teste da capacidade afetada. Sem teste, o resultado fica pendente. Nenhuma alteração recomendada é um resultado válido.
 
-## Pacote mínimo
+**Teach When Relevant:** explique somente quando o conceito aparecer na auditoria: o que é, por que existe e como afeta este projeto. Sem curso obrigatório antes de começar.
+
+| Modelo mental | Pergunta aplicada |
+|---|---|
+| WHAT IS IT | Skill, Agent, MCP, Plugin, Hook, Rule/Instruction, Memory ou Command/Workflow? |
+| WHERE DOES IT LIVE | Global/User, Project, Directory ou Session? Há escopo nativo Local/Team/Managed? |
+| WHEN IS IT USED | Always, Conditional, Explicit, Disabled ou Unknown? |
+
+Instalado, listado, carregado e usado são coisas diferentes. Remove candidate é recomendação, não modo de ativação. Cada item também recebe Project Relevance com justificativa; uma capacidade rara pode ser indispensável.
+
+## Um Core, quatro adapters
+
+A [skill audit-context](skills/audit-context/SKILL.md) é o único Core. Os [adapters](skills/audit-context/references/adapters/README.md) interpretam evidências e mecanismos específicos sem replicar o fluxo. Não são conectores nem executáveis. Fontes oficiais e limites por versão estão em cada perfil.
+
+Detecção usa apenas evidências presentes na conversa, nunca acesso automático ao computador. Quando insuficientes, perguntamos qual ambiente auditar. O host da conversa pode ser diferente do agente auditado.
+
+No modo Multiple, o mapa relaciona fontes e consumidores para encontrar sobreposição e conflito entre agentes. Repetição necessária para compatibilidade é preservada; compartilhar um arquivo exige confirmar quem o lê e verificar todos os agentes afetados.
 
 ```text
-context-hygiene/
-├── plugin.json
-├── .codex-plugin/plugin.json
-├── skills/audit-claude-code/
-│   ├── SKILL.md
-│   └── references/
-│       ├── claude-code-model.md
-│       ├── decision-rules.md
-│       ├── audit-flow.md
-│       ├── report-template.md
-│       └── benchmark.md
-├── evals/
-│   ├── README.md
-│   ├── cases/scenarios.json
-│   └── REVIEW.md
-├── docs/                  # Apresentação estática no GitHub Pages
-├── README.md
-├── PRIVACY.md
-└── LICENSE
+skills/audit-context/
+├── SKILL.md                         # Core
+└── references/
+    ├── adapters/                    # Claude Code, Codex, Antigravity, Cursor
+    ├── context-map.md               # WHAT / WHERE / WHEN e cross-agent
+    ├── decision-rules.md
+    ├── audit-flow.md
+    ├── report-template.md
+    ├── metrics.md + metrics.schema.json
+    └── benchmark.md                 # Caso histórico, não meta
 ```
 
-Uma única skill contém as instruções canônicas do produto, incluindo objetivo, invariantes e critério de sucesso. Não existe system prompt paralelo. Referências entram apenas quando necessárias; README, evals e benchmark não são carregados automaticamente pela skill.
+Somente instruções e referências sob demanda. Sem MCP próprio, backend, hooks, scripts de auditoria, contas, monitoramento ou bulk cleanup. O usuário faz as alterações; o coach não usa ferramentas do host para investigar o ambiente. Esses limites são comportamentais, não uma sandbox que revoga permissões do host.
 
-Sem MCP, backend, hooks, scripts locais, telemetria, autenticação ou acesso ao computador. O coach também não usa ferramentas externas do host para investigar o ambiente auditado. A leitura do próprio pacote e dos anexos enviados é necessária à conversa e não autoriza inspeção do computador.
+## Experimente em um projeto
 
-A apresentação em `docs/` contém HTML, CSS, um logo SVG e JavaScript executado somente no navegador para animações e cópia de texto. Não adiciona ferramentas ou scripts à skill, não coleta dados e não carrega dependências externas. A identidade visual está documentada em [docs/BRAND.md](docs/BRAND.md). Para atualizar o site, altere `docs/` e envie para `main`; o GitHub Pages usa essa pasta como origem.
+Siga o [guia de teste](docs/TESTING.md): ele oferece um caminho sem instalação e um teste opcional de descoberta nativa. Com a skill e referências disponíveis em uma conversa nova:
 
-As páginas em português (`docs/index.html`) e inglês (`docs/en/index.html`) compartilham estilos e interações. Ao alterar conteúdo ou resultados, atualize ambas; mensagens dinâmicas por idioma ficam em `docs/app.js`. O seletor PT/EN funciona sem JavaScript, não usa cookies e não redireciona automaticamente. A documentação do plugin permanece em português.
+> Use Context Hygiene para auditar o contexto dos coding agents deste projeto. Trabalho com [plataforma(s)] em [tipo de projeto] e preciso preservar [tarefas essenciais]. Vou fornecer evidências; comece pelo inventário e baseline.
 
-## Revisar e experimentar
+`/context-hygiene` é uma ideia de entrada do produto, **não um comando universal implementado**. Use a skill exibida pelo seu host ou o prompt acima após fornecer os arquivos.
 
-1. Leia [a skill](skills/audit-claude-code/SKILL.md) e [a política de privacidade](PRIVACY.md).
-2. Faça os testes conversacionais em [evals](evals/README.md), fornecendo somente as entradas de cada caso. Isso permite revisar o comportamento sem instalar nada.
-3. Após aprovação, uma instalação de teste poderá usar a fonte local/marketplace suportada pelo host, em uma conversa nova. Disponibilidade e invocação dependem da interface; use o nome exibido pelo host. Não presuma que `/audit-claude-code` funciona em todas as superfícies.
+**Atualização de 0.1.0:** a skill `audit-claude-code` passou a `audit-context`. Se instalou a versão anterior, substitua somente aquela cópia de teste, preserve suas configurações e confirme que há uma única versão carregada em uma conversa nova. Os manifestos portátil e Codex mantêm o nome `context-hygiene` e a mesma versão. Marketplace/diretório público não publicado.
 
-Prompt inicial sugerido: “Use Context Hygiene para auditar meu Claude Code. Vou fornecer outputs e screenshots; comece pela baseline.”
+## Evidências e métricas opcionais
 
-O manifesto portátil é [plugin.json](plugin.json). A apresentação OpenAI fica no [manifesto de compatibilidade](.codex-plugin/plugin.json), suportado quando não há `extensions.com.openai` na raiz. Identidade e versão devem permanecer iguais nos dois arquivos. Estrutura conferida na [documentação oficial de empacotamento](https://developers.openai.com/plugins/build/plugins) em 2026-09-24. Validação estrutural não comprova instalação ou funcionamento em cada host.
+Depois do relatório, você pode avaliar a utilidade e optar por preparar números/metadados não sensíveis para revisão e compartilhamento manual. **Desligado por padrão; sem coletor, envio automático ou persistência própria.** Recusar não limita a auditoria. O [schema fechado](skills/audit-context/references/metrics.schema.json) prepara benchmarking futuro; ranking e benchmark público não fazem parte da V1. Leia [PRIVACY.md](PRIVACY.md).
 
-## Qualidade e limites
+Contagens não medem tokens, latência ou dinheiro. O [caso histórico 389 → 49](skills/audit-context/references/benchmark.md) mede skills marcadas como nunca usadas: não é resultado da versão 0.2.0, meta universal ou prova de economia.
 
-[Casos e critérios](evals/README.md) cobrem decisões, limites de escopo, privacidade e comparação antes/depois. [Registro de revisão](evals/REVIEW.md) distingue verificações executadas de testes ainda pendentes.
+## Testes e contribuição
 
-As regras específicas do Claude Code e fontes oficiais estão no [modelo de referência](skills/audit-claude-code/references/claude-code-model.md). Interfaces e versões podem mudar; o coach pede a evidência faltante em vez de presumir compatibilidade.
+Os [casos sintéticos](evals/README.md) cobrem o fluxo e suas restrições; validação estrutural e comportamento real são verificações distintas. Amigos podem testar uma auditoria pequena, inclusive com dois agentes, e enviar o [modelo de feedback](docs/FEEDBACK.md). Nunca envie segredos, código privado ou configurações completas.
 
-O caso 389 → 49 (−87,4%) refere-se a skills nunca usadas e consta apenas na [referência anonimizada](skills/audit-claude-code/references/benchmark.md). Não é meta nem evidência de economia de tokens.
+A apresentação PT/EN está em `docs/`, publicada no GitHub Pages a partir de `main`. Atualize as duas línguas juntas. O site usa GA4 já existente, separado das métricas opt-in de auditoria; não envie dados da auditoria ao Analytics. A [identidade visual](docs/BRAND.md) e o contato **contexthygiene@gmail.com** permanecem.
 
-## Distribuição futura e V2
-
-Antes de publicar no diretório de plugins: concluir avaliações conversacionais e teste de instalação nos hosts pretendidos; revisar licença e identidade do responsável; preparar suporte e URLs públicas exigidas pela submissão vigente. O código-fonte está no GitHub e a apresentação é hospedada no GitHub Pages; registro em marketplace e submissão ao diretório de plugins continuam pendentes.
-
-V2 é apenas uma direção: companion local opcional, somente leitura, inventário semântico, escopos explícitos, redação de segredos e snapshots comparáveis. Definir consentimento, limites de caminhos e tratamento de dados antes de escolher MCP/app. Sem leitura arbitrária, shell genérico ou ferramentas de mutação. Nenhum componente de V2 está incluído nesta versão.
+Licença MIT. Fora da V1: limpeza automática, acesso remoto/local automático, monitoramento contínuo, contas, dashboard, analytics de equipes e pontuação de agentes. Primeiro validar auditorias reais; futuras integrações exigem novo escopo e consentimento.

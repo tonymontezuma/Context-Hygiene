@@ -1,10 +1,20 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "context-hygiene",
-  "version": "0.1.0",
-  "description": "Auditoria guiada do Claude Code: mínimo contexto, máxima utilidade, com evidências fornecidas pelo usuário.",
-  "author": { "name": "Context Hygiene contributors" },
+  "version": "0.2.0",
+  "description": "Coach de contexto para coding agents: relevância por projeto, auditoria guiada e uma mudança mensurável por vez.",
+  "author": {
+    "name": "Context Hygiene contributors"
+  },
   "license": "MIT",
   "repository": "https://github.com/tonymontezuma/Context-Hygiene",
-  "keywords": ["claude-code", "context-hygiene", "skills", "guided-audit"]
+  "keywords": [
+    "context-hygiene",
+    "coding-agents",
+    "claude-code",
+    "codex",
+    "antigravity",
+    "cursor",
+    "guided-audit"
+  ]
 }

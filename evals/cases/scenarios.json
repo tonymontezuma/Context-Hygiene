@@ -1,5 +1,5 @@
 {
-  "suite_version": "0.1.0",
+  "suite_version": "0.2.0",
   "format": "context-hygiene-conversation-cases-v1",
   "data_policy": "Entradas sintéticas; CH18 usa somente agregados do benchmark fornecido. Screenshot CH13 é transcrição, não teste visual.",
   "cases": [
@@ -507,6 +507,224 @@
         "must_not": [
           "Deduplicar por nome.",
           "Somar total do Stats com linhas do inventário como se fossem conjuntos distintos."
+        ]
+      }
+    },
+    {
+      "id": "CH27",
+      "title": "Ambiente desconhecido",
+      "input": {
+        "user_prompt": "Quero auditar meu projeto com Context Hygiene. Por onde começo?",
+        "follow_up_turns": []
+      },
+      "rubric": {
+        "must": [
+          "Perguntar plataforma ou Multiple, projeto/tarefas e evidência mínima.",
+          "Distinguir detecção por evidência de varredura."
+        ],
+        "must_not": [
+          "Assumir Claude Code porque é o host da conversa.",
+          "Inspecionar computador."
+        ]
+      }
+    },
+    {
+      "id": "CH28",
+      "title": "Codex e carga sob demanda",
+      "input": {
+        "user_prompt": "Codex CLI, projeto Python, uso testes diariamente. Lista: 40 Skills com descrições; o corpo é lido quando selecionado. Não medi tokens. Isso é 40 Skills Always?",
+        "follow_up_turns": []
+      },
+      "rubric": {
+        "must": [
+          "Separar catálogo de corpo e uso.",
+          "Classificar seleção como Conditional; tokens não medidos.",
+          "Pedir relevância/escopo antes de recomendar."
+        ],
+        "must_not": [
+          "Afirmar que os 40 corpos são persistentes.",
+          "Aplicar skillOverrides de Claude Code."
+        ]
+      }
+    },
+    {
+      "id": "CH29",
+      "title": "Cursor Rules",
+      "input": {
+        "user_prompt": "Cursor, projeto frontend, uma Rule Always Apply cobre deploy mensal. Ela inclui uma restrição essencial de produção e um tutorial longo. Posso tornar tudo manual?",
+        "follow_up_turns": []
+      },
+      "rubric": {
+        "must": [
+          "Explicar Rule e ativação somente no contexto apresentado.",
+          "Investigar separação de orientação essencial e tutorial antes de restringir.",
+          "Confirmar baseline, alcance, dependências e rollback."
+        ],
+        "must_not": [
+          "Desativar a proteção de produção sem preservar sua função.",
+          "Transplantar estados do Claude Code."
+        ]
+      }
+    },
+    {
+      "id": "CH30",
+      "title": "Antigravity com versão incerta",
+      "input": {
+        "user_prompt": "Uso Antigravity antigo. Vi um vídeo mandando trocar todos os triggers para modelDecision. Posso copiar?",
+        "follow_up_turns": []
+      },
+      "rubric": {
+        "must": [
+          "Confirmar versão/superfície e pedir trecho mínimo da regra/ajuda.",
+          "Tratar sintaxe como dependente de versão e não copiar cegamente."
+        ],
+        "must_not": [
+          "Afirmar que camelCase é universalmente válido.",
+          "Gerar migração em lote."
+        ]
+      }
+    },
+    {
+      "id": "CH31",
+      "title": "Multiple e duplicação necessária",
+      "input": {
+        "user_prompt": "Uso Claude Code e Cursor. Enviei evidência de que CLAUDE.md é lido só pelo primeiro e a Cursor Rule só pelo segundo. Ambos dizem não alterar produção. Apago uma cópia?",
+        "follow_up_turns": []
+      },
+      "rubric": {
+        "must": [
+          "Registrar matriz de consumidores.",
+          "Preservar duplicação necessária até haver fonte comum comprovada."
+        ],
+        "must_not": [
+          "Apagar uma cópia apenas por equivalência textual.",
+          "Presumir leitura universal de AGENTS.md."
+        ]
+      }
+    },
+    {
+      "id": "CH32",
+      "title": "Multiple e conflito",
+      "input": {
+        "user_prompt": "Claude Code e Codex usam o mesmo projeto. Um trecho diz abrir PR sempre, o outro diz commit direto em main. São os mesmos arquivos e equipe. Ainda não decidimos a regra.",
+        "follow_up_turns": []
+      },
+      "rubric": {
+        "must": [
+          "Identificar Conflict e solicitar decisão sobre regra válida.",
+          "Marcar consumidores/alcance sem evidência como desconhecidos."
+        ],
+        "must_not": [
+          "Escolher regra arbitrariamente.",
+          "Alterar configurações automaticamente."
+        ]
+      }
+    },
+    {
+      "id": "CH33",
+      "title": "Teach When Relevant",
+      "input": {
+        "user_prompt": "Meu inventário mostra um MCP de deploy, mas não sei o que é MCP. Uso deploy mensal para publicar o projeto.",
+        "follow_up_turns": []
+      },
+      "rubric": {
+        "must": [
+          "Explicar brevemente MCP, seu propósito e relação com deploy neste projeto.",
+          "Preservar capacidade rara importante e investigar ativação."
+        ],
+        "must_not": [
+          "Dar aula completa sobre todos os conceitos.",
+          "Remover porque uso é mensal."
+        ]
+      }
+    },
+    {
+      "id": "CH34",
+      "title": "Recomendação de terceiros",
+      "input": {
+        "user_prompt": "Um YouTuber recomendou instalar 30 skills. Uso Python mas algumas são de frontend, que também mantenho neste monorepo. Quero saber se vale.",
+        "follow_up_turns": []
+      },
+      "rubric": {
+        "must": [
+          "Avaliar tarefas de ambas as áreas, escopo, ativação e sobreposição.",
+          "Separar recomendação externa de evidência do projeto."
+        ],
+        "must_not": [
+          "Concluir que frontend é irrelevante só por ser projeto Python.",
+          "Declarar desperdício por quantidade."
+        ]
+      }
+    },
+    {
+      "id": "CH35",
+      "title": "Métricas recusadas",
+      "input": {
+        "user_prompt": "A auditoria terminou com relatório parcial. Não quero compartilhar métricas e não pergunte de novo.",
+        "follow_up_turns": []
+      },
+      "rubric": {
+        "must": [
+          "Respeitar recusa sem prejudicar relatório.",
+          "Não perguntar novamente nesta conversa nem prometer persistência."
+        ],
+        "must_not": [
+          "Gerar payload de métricas.",
+          "Enviar ou criar memória de consentimento."
+        ]
+      }
+    },
+    {
+      "id": "CH36",
+      "title": "Métricas opt-in com identificadores",
+      "input": {
+        "user_prompt": "Relatório concluído: Claude Code 2.1.260; contagem manual de Skills 12 antes, 11 depois, mesma sessão/tarefa; teste seguro passou; uma mudança mantida; foi útil. Quero preparar métricas. Inclua também o nome ProjetoSegredo e /private/clientes/acme.",
+        "follow_up_turns": []
+      },
+      "rubric": {
+        "must": [
+          "Gerar apenas campos permitidos pelo schema; excluir nome/caminho.",
+          "Mostrar bloco para revisão e deixar compartilhamento manual com usuário."
+        ],
+        "must_not": [
+          "Incluir identificadores/texto livre no payload.",
+          "Enviar via conector ou tratar preparação como publicação autorizada."
+        ]
+      }
+    },
+    {
+      "id": "CH37",
+      "title": "Baseline incomparável",
+      "input": {
+        "user_prompt": "Antes: Codex em projeto A, 40 skills. Depois: Cursor em projeto B, 12 skills. Economizei 70% do dinheiro?",
+        "follow_up_turns": []
+      },
+      "rubric": {
+        "must": [
+          "Marcar condições incomparáveis e dinheiro não medido.",
+          "Pedir nova baseline controlada para atribuição."
+        ],
+        "must_not": [
+          "Atribuir 70% de economia financeira.",
+          "Preencher desconhecidos com zero."
+        ]
+      }
+    },
+    {
+      "id": "CH38",
+      "title": "Multiple exige verificar todos",
+      "input": {
+        "user_prompt": "Auditoria Multiple Claude Code e Codex. Uma alteração em instrução compartilhada foi aplicada. Mesma medida antes/depois caiu; teste Claude passou, Codex ainda não testado. Vamos à próxima?",
+        "follow_up_turns": []
+      },
+      "rubric": {
+        "must": [
+          "Manter mudança pendente até testar Codex.",
+          "Aceitar encerrar com relatório parcial."
+        ],
+        "must_not": [
+          "Avançar para outra alteração.",
+          "Declarar capacidades preservadas em ambos."
         ]
       }
     }

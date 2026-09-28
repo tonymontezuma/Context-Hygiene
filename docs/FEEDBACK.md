@@ -1,29 +1,28 @@
-# Avaliações do site — proposta de integração
+# Feedback dos testes — V1 / 0.2.0
 
-Status: formulário ainda não criado. Integração depende de acesso ao Google Forms e da escolha entre respostas privadas ou publicação de avaliações.
+Obrigado por testar Context Hygiene. Uma auditoria que conclui “nada precisa mudar” também ajuda a avaliar o produto.
 
-Proposta inicial: Google Forms incorporado acima do rodapé, após a prévia da V2, carregado apenas quando o visitante solicitar. Link direto como alternativa. O formulário é separado do plugin; nenhuma coleta de auditoria passa a fazer parte da skill.
+Envie manualmente pelo [GitHub Issues](https://github.com/tonymontezuma/Context-Hygiene/issues) ou por [e-mail](mailto:contexthygiene@gmail.com). Issues são públicos; e-mail revela remetente ao destinatário. Não envie segredos, código privado, prompts completos, caminhos, repositórios privados ou screenshots sem redação. Nenhum formulário/coletor está ativo.
 
-## Conteúdo PT / EN
+## Modelo curto
 
-Título: Avalie o Context Hygiene / Rate Context Hygiene
+- Versão do Context Hygiene e agente(s)/versão/interface:
+- Modo de teste: instruções/anexos ou instalação nativa; single ou Multiple:
+- Tipo genérico de tarefa que queria preservar:
+- Foi útil? Sim / parcialmente / não:
+- O que ficou claro e o que confundiu (WHAT / WHERE / WHEN, relevância, explicações):
+- Recomendação avaliada e decisão: keep / revert / nenhuma mudança / pendente:
+- Capacidade afetada: teste passou / falhou / não testado:
+- Problema observado e resultado esperado, sem dados privados:
 
-Descrição: Conte como foi sua experiência. Não inclua credenciais, configurações privadas ou dados pessoais. / Tell us about your experience. Do not include credentials, private settings, or personal data.
+Esses campos são feedback voluntário, não telemetria. Não precisam incluir métricas ou a transcrição da conversa.
 
-1. Você já usou o plugin? / Have you used the plugin? (obrigatória)
-   - Sim, em uma auditoria / Yes, for an audit
-   - Ainda estou explorando a proposta / I am still exploring the idea
-2. Como você avalia sua experiência até aqui? / How would you rate your experience so far? (obrigatória, avaliação de 1 a 5 estrelas; 1 = ruim / poor, 5 = excelente / excellent)
-3. O que funcionou bem e o que podemos melhorar? / What worked well, and what could we improve? (parágrafo opcional)
+## Resultados numéricos opcionais
 
-Confirmação: Obrigado! Sua avaliação ajuda a orientar o Context Hygiene. / Thank you! Your feedback helps shape Context Hygiene.
+Somente depois do relatório e se quiser: peça ao coach um bloco conforme [metrics.md](../skills/audit-context/references/metrics.md). Revise os campos e copie manualmente para seu feedback. Compartilhar números não é requisito para testar. Não acrescente identificadores nem texto livre ao bloco de métricas; use o feedback separado para explicar um problema sem informações sensíveis.
 
-## Configuração recomendada
+Os resultados não vão automaticamente a um benchmark, ranking ou depoimento público. Uso/publicação futura depende de autorização e revisão dos dados. O [registro de revisão](../evals/REVIEW.md) distingue validação de arquivos, testes conversacionais e instalação.
 
-- Respostas privadas para o responsável pelo projeto; não publicar resumo das respostas.
-- Sem coleta de e-mail, nome, anexos ou exigência de login. Sem limite de uma resposta por conta, pois ele exige login.
-- Não apresentar média ou depoimentos até haver dados reais e decisão sobre publicação.
-- Antes de ativar: atualizar PRIVACY.md e a informação junto ao formulário sobre processamento pelo Google e acesso do responsável às respostas.
-- Verificar acesso por visitante sem login, envio, confirmação e registro da resposta. Identificar dados de teste e excluí-los das métricas públicas.
+## English
 
-Referências: [tipos de perguntas](https://support.google.com/docs/answer/7322334?hl=pt-BR), [publicação e incorporação](https://support.google.com/docs/answer/2839588?hl=pt-BR).
+Try one project and one reversible change using the [testing guide](TESTING.md). Report the Context Hygiene version, agent/version/interface, loading method, usefulness, what confused you, keep/revert decision and capability test result. Write in English or Portuguese. Issues are public; email exposes sender metadata. Omit private content. Sharing numerical results is optional and manual, after the audit report; no automatic collection or public benchmark is active.

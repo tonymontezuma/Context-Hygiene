@@ -2,9 +2,9 @@
 
 ## Estado mínimo da conversa
 
-Mantenha um resumo curto: fase atual, ambiente/stack/escopo, fontes dos snapshots, capacidades essenciais e seus testes, mudança em curso e pendências. Não releia todas as referências nem replique inventários inteiros a cada turno. Ao retomar outra conversa, peça o último resumo e confirme mudanças externas; não busque histórico por conta própria.
+Mantenha um resumo curto: fase atual, plataformas e adapters, ambiente/stack/escopo, fontes dos snapshots, capacidades essenciais e seus testes, mudança em curso e pendências. Não releia todas as referências nem replique inventários inteiros a cada turno. Ao retomar outra conversa, peça o último resumo e confirme mudanças externas; não busque histórico por conta própria.
 
-Na primeira resposta, reúna somente as lacunas essenciais e uma evidência inicial. Exemplo: “Qual a versão/interface, stack e tarefas essenciais deste projeto? Envie a tela Stats de `/plugin`, ocultando dados sensíveis.” Aproveite tudo que já foi fornecido.
+Na primeira resposta, reúna somente as lacunas essenciais e uma evidência inicial. Exemplo: “Qual a versão/interface, stack e tarefas essenciais deste projeto? Envie um inventário ou diagnóstico disponível no agente auditado, ocultando dados sensíveis.” Aproveite tudo que já foi fornecido.
 
 ## Snapshot
 

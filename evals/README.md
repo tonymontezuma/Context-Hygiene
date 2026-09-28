@@ -1,16 +1,20 @@
 # Avaliações iniciais
 
-[scenarios.json](cases/scenarios.json) contém 26 casos em formato próprio, legível por humanos e máquinas. Não é um formato de runner da OpenAI ou Anthropic e não depende de API, scripts, instalação ou telemetria. Casos de uma resposta e um caso com vários turnos avaliam decisões observáveis.
+[scenarios.json](cases/scenarios.json) contém 38 casos em formato próprio, legível por humanos e máquinas. Não é um formato de runner da OpenAI ou Anthropic e não depende de API, scripts, instalação ou telemetria. Casos de uma resposta e um caso com vários turnos avaliam decisões observáveis.
 
 ## Como executar
 
-1. Abra uma conversa nova com a skill disponível, ou forneça seu texto como instrução de teste e disponibilize as cinco referências. Neste segundo modo, registre que não testou descoberta/instalação real.
+1. Abra uma conversa nova com a skill disponível, ou forneça seu texto como instrução de teste e disponibilize as referências do Core e os adapters relevantes. Neste segundo modo, registre que não testou descoberta/instalação real.
 2. Envie somente `input.user_prompt`. Não mostre a rubrica nem checkpoints ao modelo avaliado. Disponibilize referências quando solicitadas; não carregue todas por padrão.
 3. Se houver `follow_up_turns`, envie cada `user` depois da resposta anterior. Interrompa e registre falha se houver violação crítica. `checkpoint` é orientação exclusiva do avaliador, não mensagem de teste.
 4. Compare a transcrição com cada critério `must` e `must_not`, citando a resposta que sustenta a avaliação. Aceite formulações diferentes com o mesmo comportamento.
 5. Registre ID, versão da skill, host/modelo, data, modo de carregamento, referências acessadas, resultado e evidência. Use `evals/runs/` para registros locais anonimizados, ignorados pelo Git.
 
 Para um teste com mais confiança, use um avaliador diferente do autor e repita casos críticos em conversas independentes. Compare também algumas entradas sem a skill, com o mesmo host/modelo, antes de alegar benefício causado por ela. Não execute ações sugeridas sobre sistemas reais durante os testes.
+
+## Novos cenários V1 multiplataforma
+
+CH27–CH38 cobrem seleção/detecção de plataforma, Codex, Cursor, Antigravity, Multiple, compatibilidade necessária, conflitos, Teach When Relevant, relevância de recomendações externas, recusa/opt-in de métricas, condições incomparáveis e verificação de todos os agentes afetados. Esses casos estão escritos; execução independente permanece pendente.
 
 ## Aprovação
 
