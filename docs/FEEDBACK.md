@@ -6,6 +6,8 @@ Envie manualmente pelo [template Beta Test no GitHub](https://github.com/tonymon
 
 O template registra idioma do bootstrap, plataforma/versão, resultado da instalação, carregamento e início da auditoria, utilidade e resultados opcionais. Não basta dizer “instalou”: diferencie arquivo copiado de skill reconhecida pelo host.
 
+Os [templates de Issues](https://github.com/tonymontezuma/Context-Hygiene/issues/new/choose) também organizam Bug Report, Beta Test Result, Feature Request e Platform Compatibility; veja [CONTRIBUTING.md](../CONTRIBUTING.md).
+
 ## Modelo curto
 
 - Versão do Context Hygiene e agente(s)/versão/interface:

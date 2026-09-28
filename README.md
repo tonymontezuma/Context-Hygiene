@@ -85,4 +85,10 @@ Os [casos sintéticos](evals/README.md) cobrem o fluxo e suas restrições; vali
 
 A apresentação PT/EN está em `docs/`, publicada no GitHub Pages a partir de `main`. Atualize as duas línguas juntas. O site usa GA4 já existente, separado das métricas opt-in de auditoria; não envie dados da auditoria ao Analytics. A [identidade visual](docs/BRAND.md) e o contato **contexthygiene@gmail.com** permanecem.
 
-Licença MIT. Fora da V1: limpeza automática, acesso remoto/local automático, monitoramento contínuo, contas, dashboard, analytics de equipes e pontuação de agentes. Primeiro validar auditorias reais; futuras integrações exigem novo escopo e consentimento.
+Contribuições seguem o fluxo **fork → branch → PR → revisão do mantenedor → merge manual**, sem acesso de escrita para contribuidores externos. Leia [CONTRIBUTING.md](CONTRIBUTING.md) e use os [templates de Issues](https://github.com/tonymontezuma/Context-Hygiene/issues/new/choose) para bugs, testes beta, sugestões e compatibilidade.
+
+## Licença
+
+**GNU Affero General Public License v3.0 only — SPDX: AGPL-3.0-only.** Consulte o [texto oficial integral](LICENSE) e o [aviso de transição](LICENSING.md). Versões já publicadas sob MIT permanecem utilizáveis sob os termos que receberam; a mudança não revoga a licença anterior retroativamente. A transição é identificada pela revisão Git, não apenas pelo número da versão do produto.
+
+Fora da V1: limpeza automática, acesso remoto/local automático, monitoramento contínuo, contas, dashboard, analytics de equipes e pontuação de agentes. Primeiro validar auditorias reais; futuras integrações exigem novo escopo e consentimento.
