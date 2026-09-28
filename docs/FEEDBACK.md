@@ -1,8 +1,12 @@
-# Feedback dos testes — V1 / 0.2.0
+# Feedback dos testes — V1 / 0.2.1 Beta
 
 Obrigado por testar Context Hygiene. Uma auditoria que conclui “nada precisa mudar” também ajuda a avaliar o produto.
 
-Envie manualmente pelo [GitHub Issues](https://github.com/tonymontezuma/Context-Hygiene/issues) ou por [e-mail](mailto:contexthygiene@gmail.com). Issues são públicos; e-mail revela remetente ao destinatário. Não envie segredos, código privado, prompts completos, caminhos, repositórios privados ou screenshots sem redação. Não há coletor automático de feedback. Os [templates de Issues](https://github.com/tonymontezuma/Context-Hygiene/issues/new/choose) organizam Bug Report, Beta Test Result, Feature Request e Platform Compatibility; veja também [CONTRIBUTING.md](../CONTRIBUTING.md).
+Envie manualmente pelo [template Beta Test no GitHub](https://github.com/tonymontezuma/Context-Hygiene/issues/new?template=beta-test.yml) ou por [e-mail](mailto:contexthygiene@gmail.com). Issues são públicos; e-mail revela remetente ao destinatário. Não envie segredos, código privado, prompts completos, caminhos, repositórios privados ou screenshots sem redação. O template de Issues é preenchido e enviado manualmente no GitHub; o site não coleta respostas.
+
+O template registra idioma do bootstrap, plataforma/versão, resultado da instalação, carregamento e início da auditoria, utilidade e resultados opcionais. Não basta dizer “instalou”: diferencie arquivo copiado de skill reconhecida pelo host.
+
+Os [templates de Issues](https://github.com/tonymontezuma/Context-Hygiene/issues/new/choose) também organizam Bug Report, Beta Test Result, Feature Request e Platform Compatibility; veja [CONTRIBUTING.md](../CONTRIBUTING.md).
 
 ## Modelo curto
 

@@ -6,7 +6,10 @@ Um Core em [SKILL.md](../../SKILL.md), perfis documentais sob demanda. Cada adap
 - [Codex](codex.md)
 - [Google Antigravity](antigravity.md)
 - [Cursor](cursor.md)
+- [OpenCode — Beta experimental](opencode.md)
 
 Versão/interface e evidência do usuário prevalecem sobre pressupostos. Se a UI divergir, peça o menor recorte de ajuda/configuração relevante; não invente comandos. Em Multiple, carregue só os perfis dos agentes declarados. A matriz de leitura é construída com evidências, não uma tabela universal de compatibilidade.
 
 Fontes oficiais consultadas em 2026-09-28; instalação nativa e auditorias completas nas quatro plataformas continuam pendentes. Suporte arquitetural/documental não equivale a homologação.
+
+O bootstrap é documentado no INSTALL.md da raiz do repositório. Sua permissão de instalar e verificar a própria skill não muda o limite de evidências fornecidas pelo usuário durante a auditoria.

@@ -126,7 +126,7 @@
           <a href="#resultados">Resultados</a>
           <a href="#processo">O processo</a>
           <a href="#plugin">O plugin</a>
-          <a href="#comecar">Começar</a>
+          <a href="#comecar">Testar Beta</a>
           <a href="#duvidas">Dúvidas</a>
           <a href="#v2">Feedback</a>
         </nav>
@@ -167,8 +167,8 @@
             dinheiro desperdiçados, preservando capacidades úteis.
           </p>
           <div class="hero-actions">
-            <a class="button button-lime" href="#processo"
-              >Conheça o processo <span aria-hidden="true">↗</span></a
+            <a class="button button-lime" href="#comecar"
+              >Experimente o Context Hygiene Beta ↗</a
             ><a
               class="text-link"
               href="https://github.com/tonymontezuma/Context-Hygiene"
@@ -176,7 +176,8 @@
             >
           </div>
           <div class="hero-meta">
-            <span>V1 · 0.2.0 · skills-only</span><span>Open source · AGPL-3.0-only</span>
+            <span>V1 · 0.2.1 Beta · skills-only</span
+            ><span>Open source · AGPL-3.0-only</span>
           </div>
         </div>
         <div
@@ -532,48 +533,116 @@
         class="start-section wrap section-space"
         id="comecar"
       >
-        <div class="start-card">
+        <div class="start-card bootstrap-card">
           <div>
-            <span class="eyebrow">04 / EXPLORE A V1</span>
+            <span class="eyebrow">04 / BETA BOOTSTRAP PROMPT</span>
             <h2 id="start-title">
-              Seu próximo passo:<br /><span>uma boa baseline.</span>
+              Experimente o Context Hygiene <span>Beta</span>
             </h2>
             <p>
-              Teste a V1 em um projeto. Use a skill com suas referências em uma
-              conversa nova ou siga o teste opcional de descoberta nativa. O
-              guia explica os dois caminhos.
+              Um prompt. Seu coding agent identifica o ambiente, instala o
+              Context Hygiene e inicia a primeira auditoria do projeto.
+            </p>
+            <p>
+              Copie o prompt e cole no seu coding agent, dentro do projeto que
+              deseja auditar.
             </p>
             <a
               class="text-link"
-              href="https://github.com/tonymontezuma/Context-Hygiene/blob/main/docs/TESTING.md"
-              >Leia o guia para testar ↗</a
+              href="https://github.com/tonymontezuma/Context-Hygiene/blob/main/INSTALL.md"
+              >Instruções de instalação ↗</a
             >
           </div>
           <div class="prompt-card">
             <div class="prompt-top">
-              <span class="mono">SEU PRIMEIRO PROMPT</span
+              <span class="mono">BETA BOOTSTRAP PROMPT</span
               ><span aria-hidden="true">↙</span>
             </div>
-            <p id="starter-prompt">
-              Use Context Hygiene para auditar o contexto dos coding agents
-              deste projeto. Comece por plataforma(s), tarefas essenciais e
-              baseline. Vou fornecer evidências; trabalhe comigo para avaliar
-              uma mudança por vez.
+            <p class="bootstrap-label">Copiar prompt de instalação</p>
+            <div class="bootstrap-actions">
+              <button
+                class="button button-lime"
+                data-copy-prompt="bootstrap-pt"
+                hidden=""
+                type="button"
+              >
+                Copiar em português</button
+              ><button
+                class="button button-dark"
+                data-copy-prompt="bootstrap-en"
+                hidden=""
+                type="button"
+              >
+                Copiar em inglês
+              </button>
+            </div>
+            <p
+              aria-live="polite"
+              class="copy-status"
+              id="copy-status"
+              role="status"
+            ></p>
+            <details class="bootstrap-preview">
+              <summary>Ler o prompt em português</summary>
+              <pre id="bootstrap-pt" lang="pt-BR" tabindex="0">
+Quero instalar e testar o Context Hygiene neste projeto.
+
+Use exclusivamente o repositório oficial do Context Hygiene como fonte de instalação e documentação:
+https://github.com/tonymontezuma/Context-Hygiene.git
+
+Identifique automaticamente o ambiente em que você está executando e siga as instruções de instalação do Context Hygiene correspondentes a essa plataforma.
+
+Não presuma que Skills, Agents, MCPs, Plugins, Rules, Hooks ou instruções já instalados são bons ou ruins. O objetivo é avaliar sua relevância para este projeto.
+
+Não altere, remova, desabilite ou instale componentes opcionais sem minha autorização.
+
+Após instalar e verificar o Context Hygiene, inicie uma auditoria deste projeto.
+
+Quero trabalhar com você durante a auditoria: explique conceitos somente quando forem relevantes, mostre possíveis problemas e benefícios antes de propor mudanças e peça minha autorização antes de qualquer análise ou ação opcional que possa consumir tempo, tokens ou dinheiro.
+
+Comece.</pre>
+            </details>
+            <details class="bootstrap-preview">
+              <summary>Ler o prompt em inglês</summary>
+              <pre id="bootstrap-en" lang="en" tabindex="0">
+I want to install and test Context Hygiene in this project.
+
+Use only the official Context Hygiene repository as the source for installation and documentation:
+https://github.com/tonymontezuma/Context-Hygiene.git
+
+Automatically identify the environment you are running in and follow the Context Hygiene installation instructions for that platform.
+
+Do not assume that any Skills, Agents, MCPs, Plugins, Rules, Hooks or instructions already installed are good or bad. The goal is to assess their relevance to this project.
+
+Do not change, remove, disable or install optional components without my authorization.
+
+After installing and verifying Context Hygiene, start an audit of this project.
+
+I want to work with you during the audit: explain concepts only when relevant, show potential problems and benefits before proposing changes, and ask for my authorization before any optional analysis or action that could consume time, tokens or money.
+
+Begin.</pre>
+            </details>
+            <p class="bootstrap-warning">
+              Beta: o comportamento de instalação varia conforme o coding agent
+              e suas permissões. Context Hygiene não deve fazer alterações
+              opcionais sem sua autorização.
             </p>
-            <button
-              class="button button-lime"
-              hidden=""
-              id="copy-prompt"
-              type="button"
+            <a
+              class="text-link beta-feedback"
+              href="https://github.com/tonymontezuma/Context-Hygiene/issues/new?template=beta-test.yml"
+              >Funcionou? Conte como foi. ↗</a
             >
-              Copiar prompt <span aria-hidden="true">⧉</span>
-            </button>
-            <p class="copy-status" id="copy-status" role="status"></p>
+            <p class="bootstrap-privacy">
+              O feedback no GitHub é público. Não inclua segredos nem dados
+              privados do projeto.
+            </p>
           </div>
         </div>
         <p class="release-note">
-          V1 / 0.2.0 · Código disponível para testes. Instalação nativa e
-          avaliações comportamentais independentes permanecem pendentes.
+          V1 / 0.2.1 Beta · Alvos de teste do bootstrap: Codex, Google
+          Antigravity, OpenCode (experimental) e Claude Code. Instruções para
+          Cursor também disponíveis. Testes completos de instalação ainda
+          pendentes.
           <a
             href="https://github.com/tonymontezuma/Context-Hygiene/blob/main/evals/REVIEW.md"
             >Acompanhe a revisão ↗</a
@@ -619,9 +688,10 @@
               >
             </summary>
             <p>
-              Não. Ele analisa somente as evidências fornecidas por você, sugere
-              uma mudança reversível por vez e aguarda sua aplicação. Não há
-              acesso direto ao computador nem execução automática de alterações.
+              Durante a auditoria, não: ele usa as evidências que você fornece e
+              você aplica as mudanças. O Bootstrap Prompt autoriza instalar o
+              próprio Context Hygiene neste projeto, conforme as permissões do
+              host. Alterações opcionais exigem sua autorização.
             </p>
           </details>
           <details>
@@ -704,8 +774,8 @@
         <div class="section-cta">
           <a
             class="button button-lime"
-            href="https://github.com/tonymontezuma/Context-Hygiene/blob/main/docs/FEEDBACK.md"
-            >Veja como enviar feedback ↗</a
+            href="https://github.com/tonymontezuma/Context-Hygiene/issues/new?template=beta-test.yml"
+            >Conte como foi seu teste Beta ↗</a
           >
         </div>
       </section>
@@ -732,9 +802,20 @@
         >
       </p>
       <p class="footer-contact">
-        <a class="text-link" href="https://github.com/tonymontezuma/Context-Hygiene/blob/main/LICENSING.md">Licença e histórico</a>
-        <a class="text-link" href="https://github.com/tonymontezuma/Context-Hygiene/blob/main/CONTRIBUTING.md">Como contribuir</a>
-        <span>Versões já publicadas sob MIT permanecem utilizáveis sob os termos que receberam; esta mudança não revoga essas permissões.</span>
+        <a
+          class="text-link"
+          href="https://github.com/tonymontezuma/Context-Hygiene/blob/main/LICENSING.md"
+          >Licença e histórico</a
+        >
+        <a
+          class="text-link"
+          href="https://github.com/tonymontezuma/Context-Hygiene/blob/main/CONTRIBUTING.md"
+          >Como contribuir</a
+        >
+        <span
+          >Versões já publicadas sob MIT permanecem utilizáveis sob os termos
+          que receberam; esta mudança não revoga essas permissões.</span
+        >
       </p>
       <div class="footer-bottom">
         <span>© 2026 Context Hygiene contributors · AGPL-3.0-only</span>

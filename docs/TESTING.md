@@ -1,6 +1,15 @@
 # Teste Context Hygiene V1 com um projeto real
 
-Versão 0.2.0. Reserve uma auditoria pequena: um projeto, uma tarefa importante e no máximo uma mudança inicial. Também vale terminar sem alterar nada.
+Versão 0.2.1 Beta. Reserve uma auditoria pequena: um projeto, uma tarefa importante e no máximo uma mudança inicial. Também vale terminar sem alterar nada.
+
+## Comece pelo Beta Bootstrap Prompt
+
+1. No [site](https://tonymontezuma.github.io/Context-Hygiene/#comecar), copie o prompt em português ou inglês e cole no coding agent, dentro do projeto de teste.
+2. O agente deve seguir o [INSTALL](../INSTALL.md), identificar sua plataforma e instalar somente Context Hygiene no projeto. Confirme que ele distingue arquivos copiados, skill carregada e auditoria iniciada; uma nova sessão pode ser necessária.
+3. Ao iniciar a auditoria, forneça tarefas essenciais e evidências mínimas. O bootstrap não autoriza varredura durante a auditoria nem ações opcionais com custo sem autorização.
+4. Avalie uma recomendação, compare antes/depois e decida manter/reverter. Compartilhe sua experiência pelo [Beta Test no GitHub](https://github.com/tonymontezuma/Context-Hygiene/issues/new?template=beta-test.yml), revisando dados sensíveis antes do envio.
+
+Teste o mesmo prompt em Codex, Antigravity, OpenCode (experimental) e Claude Code. Cursor também está documentado. Não considere um teste em um host como prova de todos. Se faltar permissão ou descoberta, registre a limitação; use o modo abaixo apenas se decidir seguir por esse caminho.
 
 ## Caminho simples, sem instalar
 
@@ -23,11 +32,12 @@ Para testar instalação, copie **a pasta completa `skills/audit-context/`**, in
 | Claude Code | `.claude/skills/audit-context/`; seleção/invocação conforme `/skills` ou menu do host |
 | Codex | `.agents/skills/audit-context/`; no CLI/IDE, `/skills` ou `$audit-context` |
 | Google Antigravity | `.agents/skills/audit-context/` nas versões atuais; confirmar em Customizations e registrar IDE/2.0/CLI |
+| OpenCode (experimental) | `.opencode/skills/audit-context/`; confirmar ID e carregamento na ferramenta de skills da versão V1/V2 |
 | Cursor | `.cursor/skills/audit-context/`; conferir descoberta no host e invocação disponível |
 
-Fontes e diferenças de versão: [adapters](../skills/audit-context/references/adapters/README.md). Os caminhos são orientação documental; esta entrega não confirma instalação nesses quatro hosts. Se o caminho não for reconhecido, registre a versão e use o modo conversacional. Não copie a mesma skill em várias pastas de descoberta. O rollback do teste é remover somente a cópia adicionada por você, depois de encerrar a sessão de teste.
+Fontes e diferenças de versão: [adapters](../skills/audit-context/references/adapters/README.md). Os caminhos são orientação documental; esta entrega não confirma instalação nos hosts listados. Se o caminho não for reconhecido, registre a versão e use o modo conversacional. Não copie a mesma skill em várias pastas de descoberta. O rollback do teste é remover somente a cópia adicionada por você, depois de encerrar a sessão de teste.
 
-Os manifestos do repositório não garantem um instalador universal. `/context-hygiene` não é comando implementado. A versão 0.1.0 usava `audit-claude-code`; a 0.2.0 usa `audit-context`. Não mantenha as duas simultaneamente no teste.
+Os manifestos do repositório não garantem um instalador universal. `/context-hygiene` não é comando implementado. A versão 0.1.0 usava `audit-claude-code`; a partir da 0.2.0 usa `audit-context`. Não mantenha as duas simultaneamente no teste.
 
 ## O que observar
 
@@ -37,4 +47,4 @@ Os manifestos do repositório não garantem um instalador universal. `/context-h
 - Propôs somente uma mudança reversível, aguardou seu resultado e comparou medidas equivalentes?
 - Gerou relatório com lacunas explícitas, sem inventar tokens, dinheiro ou execução?
 
-Considere falha se tentar acessar o computador, fazer bulk cleanup ou compartilhar dados sozinho. Não execute esse pedido: registre uma descrição redigida no feedback. Para cenários reproduzíveis sem dados reais, use [evals](../evals/README.md).
+Considere falha se, durante a auditoria, tentar inspecionar o computador além das evidências fornecidas, fazer bulk cleanup ou compartilhar dados sozinho. Não execute esse pedido: registre uma descrição redigida no feedback. Para cenários reproduzíveis sem dados reais, use [evals](../evals/README.md).

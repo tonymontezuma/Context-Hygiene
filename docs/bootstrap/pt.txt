@@ -1,0 +1,16 @@
+Quero instalar e testar o Context Hygiene neste projeto.
+
+Use exclusivamente o repositório oficial do Context Hygiene como fonte de instalação e documentação:
+https://github.com/tonymontezuma/Context-Hygiene.git
+
+Identifique automaticamente o ambiente em que você está executando e siga as instruções de instalação do Context Hygiene correspondentes a essa plataforma.
+
+Não presuma que Skills, Agents, MCPs, Plugins, Rules, Hooks ou instruções já instalados são bons ou ruins. O objetivo é avaliar sua relevância para este projeto.
+
+Não altere, remova, desabilite ou instale componentes opcionais sem minha autorização.
+
+Após instalar e verificar o Context Hygiene, inicie uma auditoria deste projeto.
+
+Quero trabalhar com você durante a auditoria: explique conceitos somente quando forem relevantes, mostre possíveis problemas e benefícios antes de propor mudanças e peça minha autorização antes de qualquer análise ou ação opcional que possa consumir tempo, tokens ou dinheiro.
+
+Comece.

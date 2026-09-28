@@ -165,23 +165,24 @@
     results.classList.add("seen");
   }
 
-  const copyButton = document.getElementById("copy-prompt");
   const status = document.getElementById("copy-status");
-  copyButton.hidden = false;
-  copyButton.addEventListener("click", async () => {
-    const prompt = document.getElementById("starter-prompt");
-    try {
-      await navigator.clipboard.writeText(
-        prompt.textContent.trim().replace(/\s+/g, " "),
-      );
-      status.textContent = text.copied;
-    } catch {
-      const selection = window.getSelection();
-      const range = document.createRange();
-      range.selectNodeContents(prompt);
-      selection.removeAllRanges();
-      selection.addRange(range);
-      status.textContent = text.selected;
-    }
+  document.querySelectorAll("[data-copy-prompt]").forEach((button) => {
+    button.hidden = false;
+    button.addEventListener("click", async () => {
+      const prompt = document.getElementById(button.dataset.copyPrompt);
+      try {
+        await navigator.clipboard.writeText(prompt.textContent.trim());
+        status.textContent = text.copied;
+      } catch {
+        prompt.closest("details").open = true;
+        prompt.focus();
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(prompt);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        status.textContent = text.selected;
+      }
+    });
   });
 })();
